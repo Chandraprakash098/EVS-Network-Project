@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-green: #39FF14;
+  --deep-purple: #4A0E4E;
+  --hot-pink: #FF69B4;
+  --electric-blue: #7DF9FF;
+  --gold: #FFD700;
+  --silver: #C0C0C0;
+  --dark-gray: #2E2E2E;
+  --light-gray: #E0E0E0;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans;
+  }
+
+  h1, h2, h3 {
+    @apply text-hotPink;
+  }
+
+  p {
+    @apply text-lightGray;
+  }
+
+  a {
+    @apply text-gold transition-all duration-300 ease-in-out;
+  }
+
+  a:hover {
+    @apply text-neonGreen;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply text-neonGreen;
+    text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+  }
+
+  .card {
+    @apply bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 transition-all duration-300 ease-in-out border border-neonGreen;
+  }
+
+  .card:hover {
+    @apply transform -translate-y-1 shadow-lg shadow-neonGreen;
+  }
+
+  .btn {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .btn:hover {
+    @apply transform scale-105 shadow-md shadow-neonGreen;
+  }
+
+  .image-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .image-hover:hover {
+    @apply transform scale-105 shadow-lg shadow-hotPink;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+    }
+    to {
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-green);
+    }
+  }
+}
+
+
+
+
+
+
+
