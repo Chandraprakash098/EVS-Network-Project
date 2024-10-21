@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -57,18 +58,31 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    navigate('/admin');
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100 p-7 sm:p-6 md:p-8 lg:p-24">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-20 mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-0">Admin Dashboard</h1>
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg w-full sm:w-auto"
+          >
+            Logout
+          </button>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold">Blog Posts</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+              <h2 className="text-xl font-semibold mb-2 sm:mb-0">Blog Posts</h2>
               <Link
                 to="/admin/blog/new"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg w-full sm:w-auto text-center"
               >
                 Add New Blog
               </Link>
@@ -96,12 +110,12 @@ const AdminDashboard = () => {
             </div>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold">Job Listings</h2>
+          <div className="bg-white p-4 sm:p-6 rounded-lg shadow">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+              <h2 className="text-xl font-semibold mb-2 sm:mb-0">Job Listings</h2>
               <Link
                 to="/admin/job/new"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg w-full sm:w-auto text-center"
               >
                 Add New Job
               </Link>
@@ -136,6 +150,3 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-
-
-

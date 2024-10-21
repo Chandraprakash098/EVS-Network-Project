@@ -50,7 +50,7 @@ const Blog = () => {
               className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <img
-                src={`http://localhost:5000${post.image}`}
+                src={`${API_URL}${post.image}`}
                 alt={post.title}
                 className="rounded-lg mb-4 w-full object-cover h-60"
               />
