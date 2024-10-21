@@ -13,7 +13,7 @@ const JobForm = () => {
     location: '',
     description: '',
     requirements: '',
-    applyLink: ''
+    // applyLink: ''
    
   });
 
@@ -145,7 +145,7 @@ const JobForm = () => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <label className="block text-gray-700 mb-2">Apply Link</label>
             <input
               type="url"
@@ -155,7 +155,7 @@ const JobForm = () => {
               className="w-full p-2 border rounded"
               required
             />
-          </div>
+          </div> */}
 
 
 
