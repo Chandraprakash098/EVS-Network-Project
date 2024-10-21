@@ -14,6 +14,7 @@ const JobForm = () => {
     description: '',
     requirements: '',
     applyLink: ''
+   
   });
 
   useEffect(() => {
@@ -156,6 +157,8 @@ const JobForm = () => {
             />
           </div>
 
+
+
           <div className="flex gap-4">
             <button
               type="submit"
@@ -181,3 +184,8 @@ const JobForm = () => {
 };
 
 export default JobForm;
+
+
+
+
+

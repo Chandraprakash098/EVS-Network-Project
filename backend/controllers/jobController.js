@@ -1,4 +1,6 @@
 const Job = require('../models/jobModel');
+const nodemailer = require('nodemailer');
+
 
 // Get all jobs
 exports.getAllJobs = async (req, res) => {
@@ -63,3 +65,6 @@ exports.deleteJob = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+
+
