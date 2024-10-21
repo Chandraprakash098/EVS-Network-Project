@@ -155,18 +155,6 @@ const BlogDetail = () => {
         </div>
       </div>
 
-      {/* Image Section */}
-      <div className="w-full my-8">
-        <div className="max-w-5xl mx-auto">
-          <img
-            src={`${API_URL}${blog.image}`}
-            alt={blog.title}
-            className="w-full rounded-xl shadow-xl object-cover"
-            style={{ height: '300px' }}
-          />
-        </div>
-      </div>
-
       {/* Content Section */}
       <div className="max-w-4xl mx-auto px-4 py-12 animate-fade-in">
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
