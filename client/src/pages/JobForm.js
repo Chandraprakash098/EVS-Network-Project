@@ -82,7 +82,7 @@ const JobForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div className="min-h-screen bg-gray-100 py-24 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow p-6">
         <h1 className="text-2xl font-bold mb-6">
           {id ? 'Edit Job Listing' : 'Create New Job Listing'}
