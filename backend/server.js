@@ -12,15 +12,16 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
-const corsOptions = {
-    origin: process.env.NODE_ENV === 'production' 
-      ? process.env.FRONTEND_URL // You'll set this in Render's environment variables
-      : 'http://localhost:3000',
-    credentials: true
-  };
-  app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: process.env.NODE_ENV === 'production' 
+//       ? process.env.FRONTEND_URL // You'll set this in Render's environment variables
+//       : 'http://localhost:3000',
+//     credentials: true
+//   };
+//   app.use(cors(corsOptions));
+//   app.options('*', cors(corsOptions));
 
 // Create uploads directory if it doesn't exist
 if (!fs.existsSync('uploads')) {
