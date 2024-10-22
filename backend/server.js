@@ -5,6 +5,8 @@ const connectDB = require('./config/db');
 const blogRoutes = require('./routes/blogRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const entertainmentRoutes = require('./routes/HotEntertainmentRoutes');
+const bollywoodEntertainmentRoutes= require('./routes/HotBollywoodRoutes')
 const fs = require('fs');
 require('dotenv').config();
 
@@ -38,6 +40,8 @@ connectDB();
 app.use('/api/blogs', blogRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/hot-entertainment', entertainmentRoutes);
+app.use('/api/hot-bollywood-entertainment/',bollywoodEntertainmentRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));

@@ -1,5 +1,3 @@
-
-
 // import React from "react";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Navbar from "./components/Navbar";
@@ -76,9 +74,6 @@
 
 // export default App;
 
-
-
-
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -104,6 +99,10 @@ import AdminDashboard from "./pages/AdminDashboard";
 import BlogForm from "./pages/BlogForm";
 import JobForm from "./pages/JobForm";
 import AdminRoute from "./components/AdminRoute";
+import EntertainmentForm from "./components/EntertainmentForm";
+import ArticleView from "./components/ArticleView";
+import BollywoodArticleView from "./components/BollywoodArticleView";
+import BollywoodEntertainmentForm from "./components/BollywoodEntertainmentForm";
 
 function App() {
   return (
@@ -115,9 +114,18 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/hot-entertainment" element={<HotEntertainment />} />
             <Route
+              path="/hot-entertainment/article/:id"
+              element={<ArticleView />}
+            />
+            <Route
               path="/hot-entertainment/bollywood"
               element={<HotEntertainmentBollywood />}
             />
+            <Route
+              path="/hot-entertainment/bollywood/article/:id"
+              element={<BollywoodArticleView />}
+            />
+
             <Route
               path="/hot-entertainment/hollywood"
               element={<HotEntertainmentHollywood />}
@@ -134,9 +142,9 @@ function App() {
               path="/traditional-art/hollywood"
               element={<TraditionalArtHollywood />}
             />
-            <Route path="/blog" element={<Blog/>} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
-            <Route path="/career" element={<Career/>} />
+            <Route path="/career" element={<Career />} />
             <Route path="/about-us" element={<AboutUs />} />
 
             <Route path="/admin" element={<AdminLogin />} />
@@ -146,6 +154,24 @@ function App() {
               <Route path="/admin/blog/edit/:id" element={<BlogForm />} />
               <Route path="/admin/job/new" element={<JobForm />} />
               <Route path="/admin/job/edit/:id" element={<JobForm />} />
+              <Route
+                path="/admin/hot-entertainment/new"
+                element={<EntertainmentForm />}
+              />
+              <Route
+                path="/admin/hot-entertainment/edit/:id"
+                element={<EntertainmentForm />}
+              />
+
+              <Route
+                path="/admin/hot-bollywood-entertainment/new"
+                element={<BollywoodEntertainmentForm />}
+              />
+
+              <Route
+                path="/admin/hot-bollywood-entertainment/edit/:id"
+                element={<BollywoodEntertainmentForm />}
+              />
             </Route>
           </Routes>
         </main>

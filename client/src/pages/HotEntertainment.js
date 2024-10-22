@@ -1,65 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import CategorySection from "../components/CategorySection";
-import img1 from '../images/pexels-felicity-tai-7964353.jpg'
-import img2 from '../images/pexels-you-know-what-blog-822152095-20294181.jpg'
-import img3 from '../images/pexels-cottonbro-3843284.jpg'
-import img4 from '../images/pexels-followingnyc-19698926.jpg'
-import img5 from '../images/pexels-jdgromov-4662303.jpg'
-import img6 from '../images/pexels-cottonbro-4009402.jpg'
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Play, Star, Film, Tv } from 'lucide-react';
+import { Sparkles, TrendingUp, Play, Star, Film, Tv } from "lucide-react";
+import { API_URL } from "../config";
+import { Link } from "react-router-dom";
 
 const HotEntertainment = () => {
-  const categoryData = [
-    {
-      title: "Bollywood Gossip",
-      image: img1,
-      description: "The juiciest gossip from Bollywood's most talked-about stars.",
-      link: "/hot-entertainment/bollywood-gossip",
-      icon: <Star className="w-6 h-6" />,
-      category: "Trending"
-    },
-    {
-      title: "Hollywood Drama",
-      image: img2,
-      description: "All the latest Hollywood news, gossip, and behind-the-scenes drama.",
-      link: "/hot-entertainment/hollywood-drama",
-      icon: <Film className="w-6 h-6" />,
-      category: "Featured"
-    },
-    {
-      title: "Upcoming Blockbusters",
-      image: img3,
-      description: "Exciting trailers and first looks at the most anticipated movies.",
-      link: "/hot-entertainment/upcoming-blockbusters",
-      icon: <Play className="w-6 h-6" />,
-      category: "New Release"
-    },
-    {
-      title: "Celebrity Fashion Trends",
-      image: img4,
-      description: "Discover the latest fashion trends from your favorite celebrities.",
-      link: "/hot-entertainment/celebrity-fashion",
-      icon: <Sparkles className="w-6 h-6" />,
-      category: "Fashion"
-    },
-    {
-      title: "Music Awards Highlights",
-      image: img5,
-      description: "Recap of the most glamorous moments from recent music awards.",
-      link: "/hot-entertainment/music-awards",
-      icon: <TrendingUp className="w-6 h-6" />,
-      category: "Awards"
-    },
-    {
-      title: "OTT Series to Binge",
-      image: img6,
-      description: "Top picks from Netflix, Amazon Prime, and other streaming platforms.",
-      link: "/hot-entertainment/ott-series",
-      icon: <Tv className="w-6 h-6" />,
-      category: "Streaming"
-    },
-  ];
+  const [categoryData, setCategoryData] = useState([]);
+
+  useEffect(() => {
+    fetchEntertainment();
+  }, []);
+
+  const fetchEntertainment = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/api/hot-entertainment`);
+      setCategoryData(response.data);
+    } catch (error) {
+      console.error("Error fetching entertainment data:", error);
+    }
+  };
 
   return (
     <div className="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen">
@@ -71,7 +32,11 @@ const HotEntertainment = () => {
           <motion.div
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
             className="w-full h-full"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-800 to-red-900 opacity-50"></div>
@@ -89,7 +54,8 @@ const HotEntertainment = () => {
               Hot Entertainment
             </h1>
             <p className="text-white text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-              Stay updated on the latest glamour, fashion, and entertainment from Bollywood and Hollywood.
+              Stay updated on the latest glamour, fashion, and entertainment
+              from Bollywood and Hollywood.
             </p>
             <div className="flex justify-center gap-4">
               <motion.button
@@ -132,7 +98,8 @@ const HotEntertainment = () => {
               What's Trending
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Discover the hottest stories and latest updates from the entertainment world
+              Discover the hottest stories and latest updates from the
+              entertainment world
             </p>
           </motion.div>
         </div>
@@ -168,7 +135,7 @@ const HotEntertainment = () => {
                   <p className="text-gray-400 mb-4 line-clamp-2">
                     {article.description}
                   </p>
-                  <a
+                  {/* <a
                     href={article.link}
                     className="inline-flex items-center gap-2 text-neonGreen hover:text-white transition-colors"
                   >
@@ -179,7 +146,20 @@ const HotEntertainment = () => {
                     >
                       →
                     </motion.span>
-                  </a>
+                  </a> */}
+
+                  <Link
+                    to={`/hot-entertainment/article/${article._id}`}
+                    className="inline-flex items-center gap-2 text-neonGreen hover:text-white transition-colors"
+                  >
+                    Read More
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </Link>
                 </div>
               </div>
             </motion.div>
