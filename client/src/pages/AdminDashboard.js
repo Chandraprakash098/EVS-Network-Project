@@ -219,7 +219,7 @@ const AdminDashboard = () => {
             items={bollywoodEntertainment}
             addLink="/admin/hot-bollywood-entertainment/new"
             onDelete={handleDeleteBollywoodEntertainment}
-            editBaseLink="/admin/hot-entertainment/bollywood/edit"
+            editBaseLink="/admin/hot-bollywood-entertainment/edit"
             extraInfo={(item) => (
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 {item.category}
