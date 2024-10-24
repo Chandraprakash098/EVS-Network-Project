@@ -7,6 +7,10 @@ const jobRoutes = require('./routes/jobRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const entertainmentRoutes = require('./routes/HotEntertainmentRoutes');
 const bollywoodEntertainmentRoutes= require('./routes/HotBollywoodRoutes')
+const hollywoodEntertainmentRoutes= require('./routes/HotHollywoodRoutes')
+const musicRoutes= require('./routes/musicRoutes')
+const musicBollywoodRoutes= require('./routes/musicBollywoodRoutes')
+const musicHollywoodRoutes= require('./routes/musicHollywoodRoutes')
 const fs = require('fs');
 require('dotenv').config();
 
@@ -42,6 +46,10 @@ app.use('/api/jobs', jobRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/hot-entertainment', entertainmentRoutes);
 app.use('/api/hot-bollywood-entertainment/',bollywoodEntertainmentRoutes)
+app.use('/api/hot-hollywood-entertainment',hollywoodEntertainmentRoutes)
+app.use('/api/music',musicRoutes)
+app.use('/api/music-bollywood',musicBollywoodRoutes)
+app.use('/api/music-hollywood',musicHollywoodRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));

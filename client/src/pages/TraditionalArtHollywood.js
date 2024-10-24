@@ -136,7 +136,7 @@ const TraditionalArtHollywood = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-pink-900 to-gray-900 min-h-screen text-white">
+    <div className="bg-white from-gray-900 via-pink-900 to-gray-900 min-h-screen text-white">
       {/* Enhanced Hero Section with Parallax Effect */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
@@ -161,7 +161,7 @@ const TraditionalArtHollywood = () => {
             <button className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:scale-105 transition-transform duration-300 flex items-center justify-center gap-2">
               <Star className="w-5 h-5" /> Explore Articles
             </button>
-            <button className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm text-white font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
+            <button className="px-8 py-4 rounded-full bg-black backdrop-blur-sm text-white font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2">
               <Bookmark className="w-5 h-5" /> Popular Content
             </button>
           </div>

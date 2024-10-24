@@ -1,60 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from 'axios'
+import { API_URL } from "../config";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Music, Headphones, Heart, Share2, Eye, Star, TrendingUp, PlayCircle } from 'lucide-react';
-import img1 from '../images/pexels-lopsan-1149616-2191013.jpg'
-import img2 from '../images/pexels-rdne-8112576.jpg'
-import img3 from '../images/pexels-mahmoud-yahyaoui-28920051.jpg'
-import img4 from '../images/pexels-mikebirdy-114820.jpg'
-import img5 from '../images/pexels-patrick-black-jr-303526-878998.jpg'
-import img6 from '../images/pexels-mutecevvil-19905185.jpg'
+
 
 const MusicBollywood = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [likes, setLikes] = useState({});
-  const articles = [
-    {
-      title: "Arijit Singh's Latest Album Breaks Records",
-      excerpt: "The 'King of Playback Singing' has done it again! Arijit Singh's new album 'Dil Ki Awaaz' is breaking all records on streaming platforms.",
-      image: img1,
-      link: "/music-bollywood/arijit-album",
-    },
-    {
-      title: "The Rise of Indie Music in Bollywood",
-      excerpt: "Independent artists are making waves in Bollywood. Is this the start of a new era in Hindi film music?",
-      image: img2,
-      link: "/music-bollywood/indie-music",
-    },
-    {
-      title: "Nostalgia Trip: Recreating 90s Bollywood Hits",
-      excerpt: "The trend of remixing 90s songs continues! Find out why these tracks still connect with audiences today.",
-      image: img3,
-      link: "/music-bollywood/90s-hits",
-    },
-    {
-      title: "Top Bollywood Playlists of 2024",
-      excerpt: "From love ballads to dance numbers, explore the most popular Bollywood playlists trending this year.",
-      image: img4,
-      link: "/music-bollywood/playlists",
-    },
-    {
-      title: "A.R. Rahman Live Concert Experience",
-      excerpt: "Step into the magical world of A.R. Rahman's live concerts. A musical journey you don't want to miss.",
-      image: img5,
-      link: "/music-bollywood/ar-rahman-concert",
-    },
-    {
-      title: "The Evolution of Bollywood's Music Industry",
-      excerpt: "How Bollywood's music has evolved over the decades, from classical hits to modern EDM beats.",
-      image: img6,
-      link: "/music-bollywood/music-evolution",
-    },
-  ];
+  const [categoryData, setCategoryData] = useState([]);
 
-  const toggleLike = (index) => {
-    setLikes(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
+  useEffect(() => {
+    fetchBollywoodMusic();
+  }, []);
+
+  const fetchBollywoodMusic = async () => {
+    try {
+      const response = await axios.get(`${API_URL}/api/music-bollywood`);
+      setCategoryData(response.data);
+    } catch (error) {
+      console.error("Error fetching entertainment data:", error);
+    }
   };
+
+ 
 
   return (
     <div className="bg-gradient-to-br from-gray via-black-950 to-gray min-h-screen">
@@ -118,12 +86,11 @@ const MusicBollywood = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {articles.map((article, index) => (
+          {categoryData.map((article, index) => (
             <div
               key={index}
               className="group relative bg-gradient-to-br from-gray-900 via-pink-900/50 to-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-green-500/20 transition-all duration-500"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+             
             >
               <div className="relative h-48 sm:h-64 overflow-hidden">
                 <img
@@ -150,14 +117,10 @@ const MusicBollywood = () => {
                   </h3>
                   <div className="flex gap-2">
                     <button 
-                      onClick={() => toggleLike(index)}
+                      // onClick={() => toggleLike(index)}
                       className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
                     >
-                      <Heart 
-                        className={`w-5 h-5 transition-colors duration-300 ${
-                          likes[index] ? 'text-red-500 fill-red-500' : 'text-white'
-                        }`}
-                      />
+                      
                     </button>
                     <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300">
                       <Share2 className="w-5 h-5 text-white" />
@@ -169,15 +132,18 @@ const MusicBollywood = () => {
                   {article.excerpt}
                 </p>
 
-                <a
-                  href={article.link}
-                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-green-400 to-pink-500 text-white font-semibold hover:scale-105 transition-transform duration-300"
-                >
-                  Read More
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <Link
+                    to={`/music/bollywood/article/${article._id}`}
+                    className="inline-flex items-center gap-2 text-neonGreen hover:text-white transition-colors"
+                  >
+                    Read More
+                    <motion.span
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1, repeat: Infinity }}
+                    >
+                      →
+                    </motion.span>
+                  </Link>
               </div>
             </div>
           ))}

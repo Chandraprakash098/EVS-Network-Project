@@ -103,6 +103,16 @@ import EntertainmentForm from "./components/EntertainmentForm";
 import ArticleView from "./components/ArticleView";
 import BollywoodArticleView from "./components/BollywoodArticleView";
 import BollywoodEntertainmentForm from "./components/BollywoodEntertainmentForm";
+import HollywoodEntertainmentForm from "./components/HollywoodEntertainmnetForm";
+import HollywoodArticleView from "./components/HollywoodArticleView";
+import MusicForm from "./components/MusicForm";
+import MusicArticleView from "./components/MusicArticleView";
+import MusicBollywoodForm from "./components/MusicBollywoodForm";
+import MusicBollywoodArticleView from "./components/MusicBollywoodArticleView";
+import MusicHollywoodForm from "./components/MusicHollywoodForm";
+import MusicHollywoodArticleView from "./components/musicHollywoodArticleView";
+// In your App.js or router
+
 
 function App() {
   return (
@@ -130,9 +140,25 @@ function App() {
               path="/hot-entertainment/hollywood"
               element={<HotEntertainmentHollywood />}
             />
+            <Route
+              path="/hot-entertainment/hollywood/article/:id"
+              element={<HollywoodArticleView/>}
+            />
             <Route path="/music" element={<Music />} />
+            <Route
+              path="/music/article/:id"
+              element={<MusicArticleView />}
+            />
             <Route path="/music/bollywood" element={<MusicBollywood />} />
+            <Route
+              path="/music/bollywood/article/:id"
+              element={<MusicBollywoodArticleView/>}
+            />
             <Route path="/music/hollywood" element={<MusicHollywood />} />
+            <Route
+              path="/music/hollywood/article/:id"
+              element={<MusicHollywoodArticleView/>}
+            />
             <Route path="/traditional-art" element={<TraditionalArt />} />
             <Route
               path="/traditional-art/bollywood"
@@ -172,7 +198,26 @@ function App() {
                 path="/admin/hot-bollywood-entertainment/edit/:id"
                 element={<BollywoodEntertainmentForm />}
               />
+              <Route
+              path="/admin/hot-hollywood-entertainment/new"
+              element={<HollywoodEntertainmentForm />}
+            />
+            <Route
+              path="/admin/hot-hollywood-entertainment/edit/:id"
+              element={<HollywoodEntertainmentForm />}
+            />
+            <Route 
+             path="/admin/music/new"
+             element={<MusicForm/>}
+            />
+            <Route path="/admin/music-bollywood/new"
+            element={<MusicBollywoodForm/>}
+            />
+            <Route path="/admin/music-hollywood/new"
+            element={<MusicHollywoodForm/>}
+            />
             </Route>
+            
           </Routes>
         </main>
         <Footer />

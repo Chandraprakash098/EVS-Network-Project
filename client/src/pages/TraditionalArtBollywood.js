@@ -137,7 +137,7 @@ const TraditionalArtBollywood = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 via-pink-900 to-gray-900 min-h-screen text-white">
+    <div className="bg-white from-gray-900 via-pink-900 to-gray-900 min-h-screen text-white">
       {/* Enhanced Hero Section with Parallax Effect */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 

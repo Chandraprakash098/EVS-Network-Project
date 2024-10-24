@@ -3,12 +3,18 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../config";
 import { Plus, LogOut, Edit2, Trash2, Menu } from "lucide-react";
+import MusicBollywood from "./MusicBollywood";
+import MusicHollywood from "./MusicHollywood";
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [jobs, setJobs] = useState([]);
   const [entertainment, setEntertainment] = useState([]);
   const [bollywoodEntertainment, setBollywoodEntertainment] = useState([]);
+  const [hollywoodEntertainment, setHollywoodEntertainment] = useState([]);
+  const [music, setMusic] = useState([]);
+  const [musicBollywood, setMusicBollywood] = useState([]);
+  const [musicHollywood, setMusicHollywood] = useState([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -19,25 +25,49 @@ const AdminDashboard = () => {
   const fetchData = async () => {
     const token = localStorage.getItem("adminToken");
     try {
-      const [blogsRes, jobsRes, entertainmentRes, bollywoodEntertainmentRes] =
-        await Promise.all([
-          axios.get(`${API_URL}/api/blogs`, {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          axios.get(`${API_URL}/api/jobs`, {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          axios.get(`${API_URL}/api/hot-entertainment`, {
-            headers: { Authorization: `Bearer ${token}` },
-          }),
-          axios.get(`${API_URL}/api/hot-bollywood-entertainment`,{
-            headers: { Authorization: `Bearer ${token}`},
-          })
-        ]);
+      const [
+        blogsRes,
+        jobsRes,
+        entertainmentRes,
+        bollywoodEntertainmentRes,
+        hollywoodEntertainmentRes,
+        musicRes,
+        musicBollywoodRes,
+        musicHollywoodRes,
+      ] = await Promise.all([
+        axios.get(`${API_URL}/api/blogs`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/jobs`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/hot-entertainment`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/hot-bollywood-entertainment`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/hot-hollywood-entertainment`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/music`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/music-bollywood`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/music-hollywood`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+      ]);
       setBlogs(blogsRes.data);
       setJobs(jobsRes.data);
       setEntertainment(entertainmentRes.data);
-      setBollywoodEntertainment(bollywoodEntertainmentRes.data)
+      setBollywoodEntertainment(bollywoodEntertainmentRes.data);
+      setHollywoodEntertainment(hollywoodEntertainmentRes.data);
+      setMusic(musicRes.data);
+      setMusicBollywood(musicBollywoodRes.data);
+      setMusicHollywood(musicHollywoodRes.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -89,18 +119,92 @@ const AdminDashboard = () => {
 
   const handleDeleteBollywoodEntertainment = async (id) => {
     const token = localStorage.getItem("adminToken");
-    if (window.confirm("Are you sure you want to delete this Bollywood entertainment item?")) {
+    if (
+      window.confirm(
+        "Are you sure you want to delete this Bollywood entertainment item?"
+      )
+    ) {
       try {
         await axios.delete(`${API_URL}/api/hot-bollywood-entertainment/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setBollywoodEntertainment(bollywoodEntertainment.filter((item) => item._id !== id));
+        setBollywoodEntertainment(
+          bollywoodEntertainment.filter((item) => item._id !== id)
+        );
       } catch (error) {
         console.error("Error deleting Bollywood entertainment:", error);
         alert("Failed to delete Bollywood entertainment item");
       }
     }
   };
+
+  const handleDeleteHollywoodEntertainment = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (
+      window.confirm(
+        "Are you sure you want to delete this Bollywood entertainment item?"
+      )
+    ) {
+      try {
+        await axios.delete(`${API_URL}/api/hot-hollywood-entertainment/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setHollywoodEntertainment(
+          hollywoodEntertainment.filter((item) => item._id !== id)
+        );
+      } catch (error) {
+        console.error("Error deleting Hollywood entertainment:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
+  const handleDeleteMusic = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/music/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setMusic(music.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("Error deleting Hollywood entertainment:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
+  const handleDeleteBollywoodMusic = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/music-bollywood/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setMusicBollywood(music.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("Error deleting Hollywood entertainment:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
+
+  const handleDeleteHollywoodMusic = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/music-hollywood/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setMusicHollywood(music.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("Error deleting Hollywood entertainment:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
 
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
@@ -109,7 +213,7 @@ const AdminDashboard = () => {
 
   const SectionCard = ({
     title,
-    items=[],
+    items = [],
     addLink,
     onDelete,
     editBaseLink,
@@ -228,6 +332,58 @@ const AdminDashboard = () => {
           />
 
           <SectionCard
+            title="Hot-Hollywood-Entertainment"
+            items={hollywoodEntertainment}
+            addLink="/admin/hot-hollywood-entertainment/new"
+            onDelete={handleDeleteHollywoodEntertainment}
+            editBaseLink="/admin/hot-hollywood-entertainment/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Music"
+            items={music}
+            addLink="/admin/music/new"
+            onDelete={handleDeleteMusic}
+            editBaseLink="/admin/music/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Bollywood Music"
+            items={musicBollywood}
+            addLink="/admin/music-bollywood/new"
+            onDelete={handleDeleteBollywoodMusic}
+            editBaseLink="/admin/music/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Hollywoood Music"
+            items={musicHollywood}
+            addLink="/admin/music-hollywood/new"
+            onDelete={handleDeleteHollywoodMusic}
+            editBaseLink="/admin/music/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
             title="Job Listings"
             items={jobs}
             addLink="/admin/job/new"
@@ -246,8 +402,3 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-
-
-
-
-
