@@ -193,7 +193,7 @@ const HeroSection = () => {
                 />
 
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center p-4 sm:p-8">
+                <div className="absolute inset-0 flex flex-col justify-end items-center text-white text-center p-4 sm:p-8">
                   <h1 className="text-4xl sm:text-6xl font-mono tracking-wider mb-4 text-black">
                     {slide.title}
                   </h1>
@@ -320,15 +320,16 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
+              className="relative w-full h-full"
             >
               <img
                 src={img1}
                 alt="Entertainment Highlight"
                 className="object-cover rounded-lg shadow-lg w-full h-full"
               />
+              {/* Text at the bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-xl sm:text-2xl font-serif">
+                <h3 className="text-white text-xl sm:text-2xl font-serif">
                   AWARD NIGHT HIGHLIGHTS
                 </h3>
               </div>
@@ -336,15 +337,16 @@ const HeroSection = () => {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
+              className="relative w-full h-full"
             >
               <img
                 src={img2}
                 alt="Entertainment Event"
                 className="object-cover rounded-lg shadow-lg w-full h-full"
               />
+              {/* Text at the bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-xl sm:text-2xl font-serif">
+                <h3 className="text-white text-xl sm:text-2xl font-serif">
                   RED CARPET MOMENTS
                 </h3>
               </div>
@@ -356,7 +358,7 @@ const HeroSection = () => {
       <section className="bg-white py-8 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-12">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               HOT BOLLYWOOD ENTERTAINMENT
             </h2>
             <Link
@@ -370,15 +372,15 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
+              className="relative w-full h-full"
             >
               <img
-                src={img6} // Specific image for first entertainment item
+                src={img6}
                 alt="Entertainment Highlight"
-                className="object-cover rounded-lg shadow-lg"
+                className="object-cover rounded-lg shadow-lg w-full h-full"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-lg sm:text-2xl font-serif">
+                <h3 className="text-white text-lg sm:text-2xl font-serif">
                   AWARD NIGHT HIGHLIGHTS
                 </h3>
               </div>
@@ -386,15 +388,15 @@ const HeroSection = () => {
 
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
+              className="relative w-full h-100full"
             >
               <img
-                src={img7} // Specific image for second entertainment item
+                src={img7}
                 alt="Entertainment Event"
-                className="object-cover rounded-lg shadow-lg"
+                className="object-cover rounded-lg shadow-lg w-full h-full"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-lg sm:text-2xl font-serif">
+                <h3 className="text-white text-lg sm:text-2xl font-serif">
                   RED CARPET MOMENTS
                 </h3>
               </div>
@@ -429,9 +431,9 @@ const HeroSection = () => {
                 className="object-cover rounded-lg shadow-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-lg sm:text-2xl font-serif">
+                {/* <h3 className="text-black text-lg sm:text-2xl font-serif">
                   AWARD NIGHT HIGHLIGHTS
-                </h3>
+                </h3> */}
               </div>
             </motion.div>
 
@@ -445,9 +447,9 @@ const HeroSection = () => {
                 className="object-cover rounded-lg shadow-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-black text-lg sm:text-2xl font-serif">
+                {/* <h3 className="text-black text-lg sm:text-2xl font-serif">
                   RED CARPET MOMENTS
-                </h3>
+                </h3> */}
               </div>
             </motion.div>
           </div>
@@ -486,18 +488,20 @@ const HeroSection = () => {
                 <h3 className="text-black sm:text-lg font-serif">
                   {article.title}
                 </h3>
-                <p className="text-black sm:text-sm italic">{article.subtitle}</p>
+                <p className="text-black sm:text-sm italic">
+                  {article.subtitle}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Culture Section */}
+      {/* Bollywood Music */}
       <section className="py-12 sm:py-16 px-4 bg-slate-100">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               Bollywood Music
             </h2>
             <Link
@@ -507,11 +511,12 @@ const HeroSection = () => {
               See All in Bollywood Music
             </Link>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {cultureArticles.map((article, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.05 }}
                 className="relative aspect-w-4 aspect-h-5"
               >
                 <img
@@ -658,7 +663,7 @@ const HeroSection = () => {
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
             Follow us on Instagram
           </h2>
-          <br/>
+          <br />
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {[img1, img2, img3, img2].map((image, index) => (
               <motion.div

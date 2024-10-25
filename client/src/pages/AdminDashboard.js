@@ -15,6 +15,9 @@ const AdminDashboard = () => {
   const [music, setMusic] = useState([]);
   const [musicBollywood, setMusicBollywood] = useState([]);
   const [musicHollywood, setMusicHollywood] = useState([]);
+  const [traditionalArt, setTraditionalArt] = useState([]);
+  const [traditionalArtBollywood, setTraditionalArtBollywood] = useState([]);
+  const [category, setCategory] = useState(""); // For selecting category to upload images for
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -34,6 +37,8 @@ const AdminDashboard = () => {
         musicRes,
         musicBollywoodRes,
         musicHollywoodRes,
+        artRes,
+        bollyArtRes,
       ] = await Promise.all([
         axios.get(`${API_URL}/api/blogs`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -59,6 +64,12 @@ const AdminDashboard = () => {
         axios.get(`${API_URL}/api/music-hollywood`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
+        axios.get(`${API_URL}/api/traditional-art`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
+        axios.get(`${API_URL}/api/traditional-art-bollywood`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
       ]);
       setBlogs(blogsRes.data);
       setJobs(jobsRes.data);
@@ -68,6 +79,8 @@ const AdminDashboard = () => {
       setMusic(musicRes.data);
       setMusicBollywood(musicBollywoodRes.data);
       setMusicHollywood(musicHollywoodRes.data);
+      setTraditionalArt(artRes.data);
+      setTraditionalArtBollywood(bollyArtRes.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -189,7 +202,6 @@ const AdminDashboard = () => {
     }
   };
 
-
   const handleDeleteHollywoodMusic = async (id) => {
     const token = localStorage.getItem("adminToken");
     if (window.confirm("Are you sure you want to delete this music item ?")) {
@@ -205,6 +217,35 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleDeleteTraditionalArt = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/traditional-art/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTraditionalArt(music.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("Error deleting Traditional Art:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
+  const handleDeleteTraditionalArtBollywood = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/traditional-art-bollywood/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTraditionalArt(music.filter((item) => item._id !== id));
+      } catch (error) {
+        console.error("Error deleting Traditional Art:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
@@ -218,6 +259,7 @@ const AdminDashboard = () => {
     onDelete,
     editBaseLink,
     extraInfo,
+    category,
   }) => (
     <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
       <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 sm:p-6">
@@ -316,6 +358,7 @@ const AdminDashboard = () => {
                 {item.category}
               </p>
             )}
+            category="hot-entertainment"
           />
 
           <SectionCard
@@ -329,6 +372,7 @@ const AdminDashboard = () => {
                 {item.category}
               </p>
             )}
+            category="hot-bollywood-entertainment"
           />
 
           <SectionCard
@@ -362,7 +406,7 @@ const AdminDashboard = () => {
             items={musicBollywood}
             addLink="/admin/music-bollywood/new"
             onDelete={handleDeleteBollywoodMusic}
-            editBaseLink="/admin/music/edit"
+            editBaseLink="/admin/music-bollywood/edit"
             extraInfo={(item) => (
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 {item.category}
@@ -375,7 +419,33 @@ const AdminDashboard = () => {
             items={musicHollywood}
             addLink="/admin/music-hollywood/new"
             onDelete={handleDeleteHollywoodMusic}
-            editBaseLink="/admin/music/edit"
+            editBaseLink="/admin/music-hollywood/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Tradional Art"
+            items={traditionalArt}
+            addLink="/admin/traditional-art/new"
+            onDelete={handleDeleteTraditionalArt}
+            editBaseLink="/admin/traditional-art/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Tradional Art Bollywood"
+            items={traditionalArtBollywood}
+            addLink="/admin/traditional-art-bollywood/new"
+            onDelete={handleDeleteTraditionalArtBollywood}
+            editBaseLink="/admin/traditional-art-bollywood/edit"
             extraInfo={(item) => (
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 {item.category}

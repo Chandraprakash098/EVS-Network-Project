@@ -11,6 +11,8 @@ const hollywoodEntertainmentRoutes= require('./routes/HotHollywoodRoutes')
 const musicRoutes= require('./routes/musicRoutes')
 const musicBollywoodRoutes= require('./routes/musicBollywoodRoutes')
 const musicHollywoodRoutes= require('./routes/musicHollywoodRoutes')
+const traditionalArtRoutes= require('./routes/TraditionalArtRoutes')
+const traditionalArtBollywoodRoutes= require('./routes/TraditionalArtBollywoodRoutes')
 const fs = require('fs');
 require('dotenv').config();
 
@@ -20,14 +22,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// const corsOptions = {
-//     origin: process.env.NODE_ENV === 'production' 
-//       ? process.env.FRONTEND_URL // You'll set this in Render's environment variables
-//       : 'http://localhost:3000',
-//     credentials: true
-//   };
-//   app.use(cors(corsOptions));
-//   app.options('*', cors(corsOptions));
 
 // Create uploads directory if it doesn't exist
 if (!fs.existsSync('uploads')) {
@@ -41,6 +35,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 connectDB();
 
 // Routes
+
 app.use('/api/blogs', blogRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/admin', adminRoutes);
@@ -50,6 +45,8 @@ app.use('/api/hot-hollywood-entertainment',hollywoodEntertainmentRoutes)
 app.use('/api/music',musicRoutes)
 app.use('/api/music-bollywood',musicBollywoodRoutes)
 app.use('/api/music-hollywood',musicHollywoodRoutes)
+app.use('/api/traditional-art',traditionalArtRoutes)
+app.use('/api/traditional-art-bollywood',traditionalArtBollywoodRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
