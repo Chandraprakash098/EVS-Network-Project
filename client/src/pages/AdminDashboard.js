@@ -17,6 +17,7 @@ const AdminDashboard = () => {
   const [musicHollywood, setMusicHollywood] = useState([]);
   const [traditionalArt, setTraditionalArt] = useState([]);
   const [traditionalArtBollywood, setTraditionalArtBollywood] = useState([]);
+  const [traditionalArtHollywood, setTraditionalArtHollywood] = useState([]);
   const [category, setCategory] = useState(""); // For selecting category to upload images for
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const AdminDashboard = () => {
         musicHollywoodRes,
         artRes,
         bollyArtRes,
+        hollyArtRes,
       ] = await Promise.all([
         axios.get(`${API_URL}/api/blogs`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -70,6 +72,9 @@ const AdminDashboard = () => {
         axios.get(`${API_URL}/api/traditional-art-bollywood`, {
           headers: { Authorization: `Bearer ${token}` },
         }),
+        axios.get(`${API_URL}/api/traditional-art-hollywood`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }),
       ]);
       setBlogs(blogsRes.data);
       setJobs(jobsRes.data);
@@ -81,6 +86,7 @@ const AdminDashboard = () => {
       setMusicHollywood(musicHollywoodRes.data);
       setTraditionalArt(artRes.data);
       setTraditionalArtBollywood(bollyArtRes.data);
+      setTraditionalArtHollywood(hollyArtRes.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -194,7 +200,7 @@ const AdminDashboard = () => {
         await axios.delete(`${API_URL}/api/music-bollywood/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setMusicBollywood(music.filter((item) => item._id !== id));
+        setMusicBollywood(musicBollywood.filter((item) => item._id !== id));
       } catch (error) {
         console.error("Error deleting Hollywood entertainment:", error);
         alert("Failed to delete hollywood entertainment item");
@@ -209,7 +215,7 @@ const AdminDashboard = () => {
         await axios.delete(`${API_URL}/api/music-hollywood/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setMusicHollywood(music.filter((item) => item._id !== id));
+        setMusicHollywood(musicHollywood.filter((item) => item._id !== id));
       } catch (error) {
         console.error("Error deleting Hollywood entertainment:", error);
         alert("Failed to delete hollywood entertainment item");
@@ -224,7 +230,7 @@ const AdminDashboard = () => {
         await axios.delete(`${API_URL}/api/traditional-art/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setTraditionalArt(music.filter((item) => item._id !== id));
+        setTraditionalArt(traditionalArt.filter((item) => item._id !== id));
       } catch (error) {
         console.error("Error deleting Traditional Art:", error);
         alert("Failed to delete hollywood entertainment item");
@@ -239,7 +245,26 @@ const AdminDashboard = () => {
         await axios.delete(`${API_URL}/api/traditional-art-bollywood/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setTraditionalArt(music.filter((item) => item._id !== id));
+        setTraditionalArtBollywood(
+          traditionalArtBollywood.filter((item) => item._id !== id)
+        );
+      } catch (error) {
+        console.error("Error deleting Traditional Art:", error);
+        alert("Failed to delete hollywood entertainment item");
+      }
+    }
+  };
+
+  const handleDeleteTraditionalArtHollywood = async (id) => {
+    const token = localStorage.getItem("adminToken");
+    if (window.confirm("Are you sure you want to delete this music item ?")) {
+      try {
+        await axios.delete(`${API_URL}/api/traditional-art-hollywood/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setTraditionalArtHollywood(
+          traditionalArtHollywood.filter((item) => item._id !== id)
+        );
       } catch (error) {
         console.error("Error deleting Traditional Art:", error);
         alert("Failed to delete hollywood entertainment item");
@@ -446,6 +471,19 @@ const AdminDashboard = () => {
             addLink="/admin/traditional-art-bollywood/new"
             onDelete={handleDeleteTraditionalArtBollywood}
             editBaseLink="/admin/traditional-art-bollywood/edit"
+            extraInfo={(item) => (
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {item.category}
+              </p>
+            )}
+          />
+
+          <SectionCard
+            title="Tradional Art Hollywood"
+            items={traditionalArtHollywood}
+            addLink="/admin/traditional-art-hollywood/new"
+            onDelete={handleDeleteTraditionalArtHollywood}
+            editBaseLink="/admin/traditional-art-hollywood/edit"
             extraInfo={(item) => (
               <p className="text-xs sm:text-sm text-gray-600 mt-1">
                 {item.category}

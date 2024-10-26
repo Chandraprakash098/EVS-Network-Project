@@ -37,6 +37,10 @@ import MusicHollywoodForm from "./components/MusicHollywoodForm";
 import MusicHollywoodArticleView from "./components/musicHollywoodArticleView";
 import FormTraditionalArt from "./components/FormTraditionalArt";
 import FormTraditionalArtBollywood from "./components/FormTraditionalArtBollywood";
+import FormTraditionalArtHollywood from "./components/FormTraditionalArtHollywood";
+import TraditionalArtArticleView from "./components/TraditionalArtArticleView";
+import BollyTraditionalArtArticleView from "./components/BollyTraditionalArtArticleView";
+import HollyTraditionalArtArticleView from "./components/HollyTraditionalArtArticleView";
 
 // In your App.js or router
 
@@ -83,13 +87,22 @@ function App() {
               element={<MusicHollywoodArticleView />}
             />
             <Route path="/traditional-art" element={<TraditionalArt />} />
+            <Route path="/traditional-art/article/:id" element={<TraditionalArtArticleView/>} />
             <Route
               path="/traditional-art/bollywood"
               element={<TraditionalArtBollywood />}
             />
             <Route
+              path="/traditional-art/bollywood/article/:id"
+              element={<BollyTraditionalArtArticleView/>}
+            />
+            <Route
               path="/traditional-art/hollywood"
               element={<TraditionalArtHollywood />}
+            />
+            <Route
+              path="/traditional-art/hollywood/article/:id"
+              element={<HollyTraditionalArtArticleView/>}
             />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogDetail />} />
@@ -152,6 +165,8 @@ function App() {
               <Route path="/admin/traditional-art/edit/:id" element={<FormTraditionalArt/>} />
               <Route path="/admin/traditional-art-bollywood/new" element={<FormTraditionalArtBollywood/>} />
               <Route path="/admin/traditional-art-bollywood/edit/:id" element={<FormTraditionalArtBollywood/>} />
+              <Route path="/admin/traditional-art-hollywood/new" element={<FormTraditionalArtHollywood/>} />
+              <Route path="/admin/traditional-art-hollywood/edit/:id" element={<FormTraditionalArtHollywood/>} />
             </Route>
           </Routes>
         </main>

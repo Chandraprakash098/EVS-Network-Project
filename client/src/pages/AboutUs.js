@@ -6,12 +6,11 @@ const AboutUs = () => {
     <section className="bg-white text-white py-20 px-6">
       {/* Main Section */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-Green mb-10 mt-5 animate-fadeIn">
+        <h2 className="text-4xl sm:text-5xl text-black font-bold  mb-10 mt-5 animate-fadeIn">
           About EVS Network
         </h2>
         <p className="text-lg sm:text-xl text-black mb-14 leading-relaxed animate-fadeIn delay-100">
           EVS Network is your one-stop platform for the latest updates in
-          Hollywood, Bollywood, music, and art. We aim to connect you with the 
           most trending stories, captivating events, and exclusive content from 
           the entertainment world.
         </p>
@@ -25,7 +24,7 @@ const AboutUs = () => {
           className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
         />
         <div className="text-center md:text-left">
-          <h3 className="text-3xl font-semibold text-Green mb-4">
+          <h3 className="text-3xl font-semibold text-black mb-4">
             Our Mission
           </h3>
           <p className="text-lg text-black leading-relaxed">

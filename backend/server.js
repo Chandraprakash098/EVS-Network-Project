@@ -13,6 +13,7 @@ const musicBollywoodRoutes= require('./routes/musicBollywoodRoutes')
 const musicHollywoodRoutes= require('./routes/musicHollywoodRoutes')
 const traditionalArtRoutes= require('./routes/TraditionalArtRoutes')
 const traditionalArtBollywoodRoutes= require('./routes/TraditionalArtBollywoodRoutes')
+const traditionalArtHollywoodRoutes= require('./routes/TraditionalArtHollywoodRoutes')
 const fs = require('fs');
 require('dotenv').config();
 
@@ -47,6 +48,7 @@ app.use('/api/music-bollywood',musicBollywoodRoutes)
 app.use('/api/music-hollywood',musicHollywoodRoutes)
 app.use('/api/traditional-art',traditionalArtRoutes)
 app.use('/api/traditional-art-bollywood',traditionalArtBollywoodRoutes)
+app.use('/api/traditional-art-hollywood',traditionalArtHollywoodRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));

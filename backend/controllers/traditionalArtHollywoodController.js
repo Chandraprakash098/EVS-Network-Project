@@ -1,11 +1,11 @@
-const TraditionalArt = require('../models/TraditionalArtModel');
+const TradionalArtHollywood = require('../models/TraditionalArtHollywood');
 const path = require('path');
 const fs = require('fs');
 
 
 exports.getAllArts = async (req, res) => {
     try {
-        const art = await TraditionalArt.find().sort({ createdAt: -1 });
+        const art = await TradionalArtHollywood.find().sort({ createdAt: -1 });
         res.json(art);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -14,7 +14,7 @@ exports.getAllArts = async (req, res) => {
 
 exports.getSingleArts = async (req, res) => {
     try {
-        const art = await TraditionalArt.findById(req.params.id);
+        const art = await TradionalArtHollywood.findById(req.params.id);
         if (!art) {
             return res.status(404).json({ error: 'Entertainment item not found' });
         }
@@ -35,7 +35,7 @@ exports.createArts = async (req, res) => {
 
         const { title, description, category, icon, link } = req.body;
         
-        const art = new TraditionalArt({
+        const art = new TradionalArtHollywood({
             title,
             description,
             category,
@@ -67,7 +67,7 @@ exports.updateArts = async (req, res) => {
             updateData.image = `/uploads/${req.file.filename}`;
             
             // Delete old image if it exists
-            const oldArts = await TraditionalArt.findById(req.params.id);
+            const oldArts = await TradionalArtHollywood.findById(req.params.id);
             if (oldArts && oldArts.image) {
                 const oldImagePath = path.join(__dirname, '..', oldArts.image);
                 if (fs.existsSync(oldImagePath)) {
@@ -76,7 +76,7 @@ exports.updateArts = async (req, res) => {
             }
         }
 
-        const art = await TraditionalArt.findByIdAndUpdate(
+        const art = await TradionalArtHollywood.findByIdAndUpdate(
             req.params.id,
             updateData,
             { new: true, runValidators: true }
@@ -94,7 +94,7 @@ exports.updateArts = async (req, res) => {
 
 exports.deleteArts = async (req, res) => {
     try {
-        const art = await TraditionalArt.findById(req.params.id);
+        const art = await TradionalArtHollywood.findById(req.params.id);
         if (!art) {
             return res.status(404).json({ error: 'Entertainment item not found' });
         }

@@ -129,7 +129,7 @@ const Career = () => {
 
       {/* Careers Section */}
       <div className="container mx-auto px-4 py-8">
-        <h2 className="text-4xl font-bold text-neonGreen mb-6 text-center">
+        <h2 className="text-4xl font-serif text-black mb-6 text-center">
           Discover your new career
         </h2>
         <p className="text-lg mb-8 text-center text-gray-600">
@@ -158,7 +158,7 @@ const Career = () => {
                 </ul>
                 <button
                   onClick={() => handleApply(job)}
-                  className="inline-block bg-neonGreen text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300"
+                  className="inline-block bg-green-500 text-black px-4 py-2 rounded hover:bg-green-600 transition duration-300"
                 >
                   Apply Now
                 </button>
