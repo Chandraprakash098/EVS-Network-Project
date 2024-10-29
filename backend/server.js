@@ -14,6 +14,7 @@ const musicHollywoodRoutes= require('./routes/musicHollywoodRoutes')
 const traditionalArtRoutes= require('./routes/TraditionalArtRoutes')
 const traditionalArtBollywoodRoutes= require('./routes/TraditionalArtBollywoodRoutes')
 const traditionalArtHollywoodRoutes= require('./routes/TraditionalArtHollywoodRoutes')
+
 const fs = require('fs');
 require('dotenv').config();
 
@@ -25,12 +26,11 @@ app.use(cors());
 
 
 // Create uploads directory if it doesn't exist
-if (!fs.existsSync('uploads')) {
-    fs.mkdirSync('uploads');
-}
+// if (!fs.existsSync('uploads')) {
+//     fs.mkdirSync('uploads');
+// }
 
-// Serve static files from uploads directory
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Connect to MongoDB
 connectDB();

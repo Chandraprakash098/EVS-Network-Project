@@ -1,11 +1,18 @@
-
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Play, Star, Film, Tv, Menu, X } from "lucide-react";
+import {
+  Sparkles,
+  TrendingUp,
+  Play,
+  Star,
+  Film,
+  Tv,
+  Menu,
+  X,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import {API_URL} from '../config'
-import axios from 'axios'
+import { API_URL } from "../config";
+import axios from "axios";
 
 const HotEntertainment = () => {
   const [categoryData, setCategoryData] = useState([]);
@@ -33,18 +40,15 @@ const HotEntertainment = () => {
       <header className="bg-black text-white py-4">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            <button 
-              className="lg:hidden"
-              onClick={() => setIsMenuOpen(true)}
-            >
+            <button className="lg:hidden" onClick={() => setIsMenuOpen(true)}>
               <Menu size={24} />
             </button>
             <div className="text-sm hidden sm:block">
-              {new Date().toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+              {new Date().toLocaleDateString("en-US", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               })}
             </div>
             <div className="hidden lg:flex gap-4">
@@ -80,11 +84,23 @@ const HotEntertainment = () => {
               animate={{ opacity: 1, x: 0 }}
               className="relative h-[300px] sm:h-[400px] lg:h-[600px]"
             >
-              <img
+              {/* <img
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
                 className="w-full h-full object-cover rounded-lg"
-              />
+              /> */}
+
+              {featuredArticle.image && (
+                <img
+                  src={featuredArticle.image} // Direct use of Cloudinary URL
+                  alt={featuredArticle.title}
+                  className="w-full h-full object-cover rounded-lg"
+                  onError={(e) => {
+                    e.target.src = "/placeholder-image.jpg"; // Fallback image
+                    console.error("Image loading error:", featuredArticle.image);
+                  }}
+                />
+              )}
               <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-1 rounded">
                 FEATURED
               </div>
@@ -113,7 +129,9 @@ const HotEntertainment = () => {
       {/* Latest Stories Grid */}
       <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 md:mb-12 gap-4">
-          <h2 className="text-2xl md:text-3xl text-slate-800 text-center font-bold font-serif">Latest Stories</h2>
+          <h2 className="text-2xl md:text-3xl text-slate-800 text-center font-bold font-serif">
+            Latest Stories
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -160,7 +178,8 @@ const HotEntertainment = () => {
               Subscribe to EVs-Network
             </h3>
             <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base">
-              Get exclusive access to the hottest stories, celebrity interviews, and behind-the-scenes content delivered right to your inbox.
+              Get exclusive access to the hottest stories, celebrity interviews,
+              and behind-the-scenes content delivered right to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <input

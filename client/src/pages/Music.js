@@ -76,7 +76,8 @@ const Music = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-blue-500/20 to-purple-500/20 backdrop-blur-sm"></div>
               </div>
               <img
-                src="/api/placeholder/600/600"
+                // src="/api/placeholder/600/600"
+                src="/placeholder-image.jpg"
                 alt="Featured Artist"
                 className="absolute inset-0 w-full h-full object-cover rounded-full p-12"
               />

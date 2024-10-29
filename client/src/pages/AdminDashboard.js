@@ -20,6 +20,7 @@ const AdminDashboard = () => {
   const [traditionalArtHollywood, setTraditionalArtHollywood] = useState([]);
   const [category, setCategory] = useState(""); // For selecting category to upload images for
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const[deleteStatus,setDeleteStatus]=useState([])
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -92,17 +93,69 @@ const AdminDashboard = () => {
     }
   };
 
+  // const handleDeleteBlog = async (blogId) => {
+  //   const token = localStorage.getItem("adminToken");
+  //   if (window.confirm("Are you sure you want to delete this blog post?")) {
+  //     try {
+  //       await axios.delete(`${API_URL}/api/blogs/${blogId}`, {
+  //         headers: { Authorization: `Bearer ${token}` },
+  //       });
+  //       setBlogs(blogs.filter((blog) => blog._id !== blogId));
+  //     } catch (error) {
+  //       console.error("Error deleting blog:", error);
+  //     }
+  //   }
+  // };
+
+
   const handleDeleteBlog = async (blogId) => {
-    const token = localStorage.getItem("adminToken");
-    if (window.confirm("Are you sure you want to delete this blog post?")) {
-      try {
-        await axios.delete(`${API_URL}/api/blogs/${blogId}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setBlogs(blogs.filter((blog) => blog._id !== blogId));
-      } catch (error) {
-        console.error("Error deleting blog:", error);
+    if (!window.confirm("Are you sure you want to delete this blog post?")) {
+      return;
+    }
+
+    setDeleteStatus({ show: true, message: "Deleting...", type: "info" });
+
+    try {
+      const token = localStorage.getItem("adminToken");
+      if (!token) {
+        throw new Error("No authentication token found");
       }
+
+      await axios.delete(`${API_URL}/api/blogs/${blogId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      setBlogs(blogs.filter((blog) => blog._id !== blogId));
+      setDeleteStatus({
+        show: true,
+        message: "Blog post deleted successfully",
+        type: "success",
+      });
+
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        setDeleteStatus({ show: false, message: "", type: "" });
+      }, 3000);
+    } catch (error) {
+      console.error("Error deleting blog:", error);
+
+      let errorMessage = "Failed to delete blog post. ";
+      if (error.response?.status === 401) {
+        errorMessage += "Please login again.";
+      } else if (error.response?.data?.error) {
+        errorMessage += error.response.data.error;
+      } else {
+        errorMessage += "Please try again.";
+      }
+
+      setDeleteStatus({
+        show: true,
+        message: errorMessage,
+        type: "error",
+      });
     }
   };
 
@@ -510,3 +563,8 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
+
+
+

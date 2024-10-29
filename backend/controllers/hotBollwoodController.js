@@ -23,6 +23,72 @@ exports.getSingleEntertainment = async (req, res) => {
     }
 };
 
+// exports.createEntertainment = async (req, res) => {
+//     try {
+//         if (!req.file) {
+//             return res.status(400).json({ error: 'Image is required' });
+//         }
+
+//         const { title, description, category, icon, link } = req.body;
+        
+//         const entertainment = new HotBollywoodEntertainment({
+//             title,
+//             description,
+//             category,
+//             icon,
+//             link,
+//             image: `/uploads/${req.file.filename}`
+//         });
+
+//         await entertainment.save();
+//         res.status(201).json(entertainment);
+//     } catch (error) {
+//         console.error('Entertainment creation error:', error);
+//         res.status(500).json({ error: error.message });
+//     }
+// };
+
+// exports.updateEntertainment = async (req, res) => {
+//     try {
+//         const { title, description, category, icon, link } = req.body;
+//         const updateData = {
+//             title,
+//             description,
+//             category,
+//             icon,
+//             link
+//         };
+
+//         if (req.file) {
+//             updateData.image = `/uploads/${req.file.filename}`;
+            
+//             // Delete old image if it exists
+//             const oldEntertainment = await HotBollywoodEntertainment.findById(req.params.id);
+//             if (oldEntertainment && oldEntertainment.image) {
+//                 const oldImagePath = path.join(__dirname, '..', oldEntertainment.image);
+//                 if (fs.existsSync(oldImagePath)) {
+//                     fs.unlinkSync(oldImagePath);
+//                 }
+//             }
+//         }
+
+//         const entertainment = await HotBollywoodEntertainment.findByIdAndUpdate(
+//             req.params.id,
+//             updateData,
+//             { new: true, runValidators: true }
+//         );
+
+//         if (!entertainment) {
+//             return res.status(404).json({ error: 'Entertainment item not found' });
+//         }
+
+//         res.json(entertainment);
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// };
+
+
 exports.createEntertainment = async (req, res) => {
     try {
         if (!req.file) {
@@ -30,14 +96,14 @@ exports.createEntertainment = async (req, res) => {
         }
 
         const { title, description, category, icon, link } = req.body;
-        
+
         const entertainment = new HotBollywoodEntertainment({
             title,
             description,
             category,
             icon,
             link,
-            image: `/uploads/${req.file.filename}`
+            image: req.file.path  // Cloudinary stores the URL in req.file.path
         });
 
         await entertainment.save();
@@ -60,15 +126,13 @@ exports.updateEntertainment = async (req, res) => {
         };
 
         if (req.file) {
-            updateData.image = `/uploads/${req.file.filename}`;
+            updateData.image = req.file.path;  // Store Cloudinary URL
             
-            // Delete old image if it exists
+            // Optional: Delete the previous Cloudinary image (if required)
             const oldEntertainment = await HotBollywoodEntertainment.findById(req.params.id);
             if (oldEntertainment && oldEntertainment.image) {
-                const oldImagePath = path.join(__dirname, '..', oldEntertainment.image);
-                if (fs.existsSync(oldImagePath)) {
-                    fs.unlinkSync(oldImagePath);
-                }
+                const oldImagePublicId = oldEntertainment.image.split('/').pop().split('.')[0];
+                await cloudinary.uploader.destroy(oldImagePublicId);
             }
         }
 
