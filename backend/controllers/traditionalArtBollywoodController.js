@@ -119,6 +119,7 @@
 const TradionalArtBollywood = require('../models/TraditionalArtBollywood');
 const cloudinary = require('cloudinary').v2;
 
+
 // Configure Cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

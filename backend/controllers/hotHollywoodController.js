@@ -117,6 +117,7 @@
 
 
 const HotHollywoodEntertainment = require('../models/hotHollywoodEntertainmentModel');
+const { cloudinary } = require('../config/cloudinary');
 
 exports.getAllEntertainment = async (req, res) => {
   try {

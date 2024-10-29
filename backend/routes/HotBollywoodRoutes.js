@@ -40,7 +40,7 @@
 const express = require('express');
 const HotBollywoodController = require('../controllers/hotBollwoodController');
 const authMiddleware = require('../middleware/authMiddleware');
-const { upload } = require('../config/Cloudinary');  // Import from Cloudinary.js
+const { upload } = require('../config/cloudinary');  // Import from Cloudinary.js
 
 const router = express.Router();
 

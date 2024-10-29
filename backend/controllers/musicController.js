@@ -116,6 +116,7 @@
 
 
 const Music = require('../models/music');
+const { cloudinary } = require('../config/cloudinary');
 
 exports.getAllMusic = async (req, res) => {
   try {

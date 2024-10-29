@@ -1,6 +1,7 @@
 const HotBollywoodEntertainment = require('../models/hotBollywoodEntertainmentModel');
 const path = require('path');
 const fs = require('fs');
+const { cloudinary } = require('../config/cloudinary');
 
 exports.getAllEntertainment = async (req, res) => {
     try {
