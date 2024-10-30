@@ -118,7 +118,7 @@ const FormTraditionalArtHollywood = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
             {id
               ? "Edit Entertainment Item"
-              : "Add New Traditional Hollywood Art Item"}
+              : "Add New International Traditional  Art Item"}
           </h2>
 
           {error && (

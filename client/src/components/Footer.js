@@ -210,7 +210,7 @@ const Footer = () => {
           </div>
 
           {/* Services Column */}
-          <div>
+          {/* <div>
             <h3 className="text-xs font-bold mb-4 sm:mb-6 tracking-wider text-green-500">
               SERVICES
             </h3>
@@ -219,10 +219,10 @@ const Footer = () => {
               <FooterLink href="/projects">Projects</FooterLink>
               <FooterLink href="/portfolio">Portfolio</FooterLink>
             </nav>
-          </div>
+          </div> */}
 
           {/* Company Column */}
-          <div>
+          {/* <div>
             <h3 className="text-xs font-bold mb-4 sm:mb-6 tracking-wider text-green-500">
               COMPANY
             </h3>
@@ -231,18 +231,18 @@ const Footer = () => {
               <FooterLink href="/team">Our Team</FooterLink>
               <FooterLink href="/careers">Careers</FooterLink>
             </nav>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Section */}
         <div className="pt-6 sm:pt-8 border-t border-white/20">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-2 text-[10px] sm:text-xs text-gray-400">
-              <FooterLink href="#">TERMS OF SERVICE</FooterLink>
+              {/* <FooterLink href="#">TERMS OF SERVICE</FooterLink>
               <FooterLink href="#">CONTACT</FooterLink>
               <FooterLink href="#">CAREERS</FooterLink>
               <FooterLink href="#">NEWSLETTER</FooterLink>
-              <FooterLink href="#">SUBSCRIBE</FooterLink>
+              <FooterLink href="#">SUBSCRIBE</FooterLink> */}
             </div>
             <div className="text-[10px] sm:text-xs text-gray-400 text-center sm:text-left">
               © 2024 EvoSynchtech Tech. All rights reserved.

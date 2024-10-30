@@ -107,7 +107,7 @@ const FormTraditionalArtBollywood = () => {
       <div className="max-w-4xl mx-auto bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl shadow-xl">
         <div className="p-6 mt-20">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
-            {id ? 'Edit Entertainment Item' : 'Add New Traditional Bollywood Art Item'}
+            {id ? 'Edit Entertainment Item' : 'Add New National Traditional  Art Item'}
           </h2>
 
           {error && (

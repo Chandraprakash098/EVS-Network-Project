@@ -60,7 +60,7 @@ const TraditionalArt = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
-                    Bollywood Traditional Art
+                    National Traditional Art
                   </h1>
                   <p className="text-xl text-gray-200 mb-8 max-w-xl">
                     Explore the timeless beauty of traditional art forms across cultures and generations.
