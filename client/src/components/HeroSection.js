@@ -11,13 +11,36 @@ import {
   Calendar,
   Play,
 } from "lucide-react";
-import img1 from "../images/ranveer.webp";
+import img1 from "../images/celebrity1.webp";
 import img2 from "../images/pexels-abhinna-28939990.jpg";
-import img3 from "../images/pexels-cottonbro-4009402.jpg";
-import img4 from "../images/celebrityimage.jpg";
-import img5 from "../images/celebrityimage1.jpg";
+import img3 from "../images/softbrilliance5.jpg";
+import img4 from "../images/celebrityimage.webp";
+import img5 from "../images/celebrity2.webp";
 import img6 from "../images/pexels-eduardo-hernandez-soto-1315528681-28925178.jpg";
 import img7 from "../images/pexels-rdne-8112576.jpg";
+import img8 from '../images/softbrilliance2.jpg'
+import img9 from '../images/softbrilliance3.jpg'
+import img10 from '../images/softbrilliance4.jpg'
+import img11 from '../images/softbrilliance.jpg'
+import img12 from '../images/hotentertainment1.jpg'
+import img13 from '../images/hotentertainment2.jpg'
+import img14 from '../images/hotentertainmentboly1.jpg'
+import img15 from '../images/hotentertainmentholy1.jpg'
+import img16 from '../images/hotentertainmentholy2.jpg'
+import img17 from '../images/music1.jpg'
+import img18 from '../images/music2.jpg'
+import img19 from '../images/music3.jpg'
+import img20 from '../images/music4.jpg'
+import img21 from '../images/musicboly1.jpg'
+import img22 from '../images/musicboly2.jpg'
+import img23 from '../images/musicboly3.jpg'
+import img25 from '../images/musicholy1.jpg'
+import img26 from '../images/musicholy2.jpg'
+import img27 from '../images/musicholy3.jpg'
+import img28 from '../images/musicholy4.jpg'
+import img29 from '../images/art1.webp'
+import img30 from '../images/art2.webp'
+import img31 from '../images/art3.webp'
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -50,28 +73,28 @@ const HeroSection = () => {
       subtitle: "We're falling for Fall...",
       date: "Sep 27, 2024",
       bgColor: "bg-purple-100",
-      image: img1, // Use specific image
+      image: img17, // Use specific image
     },
     {
       title: "A Golden Summer",
       subtitle: "Beauty's getting warm...",
       date: "Aug 29, 2024",
       bgColor: "bg-orange-100",
-      image: img2, // Use specific image
+      image: img18, // Use specific image
     },
     {
       title: "Slip into Neutral...",
       subtitle: "The art of subtlety...",
       date: "Jun 28, 2024",
       bgColor: "bg-gray-100",
-      image: img3, // Use specific image
+      image: img19, // Use specific image
     },
     {
       title: "MY BLUE HEAVEN",
       subtitle: "The beauty of blue...",
       date: "Jun 1, 2024",
       bgColor: "bg-blue-100",
-      image: img2, // Use another specific image
+      image: img20, // Use another specific image
     },
   ];
 
@@ -79,17 +102,17 @@ const HeroSection = () => {
     {
       title: "The Visitors",
       date: "Jun 13, 2024",
-      image: img2, // Use a unique image for this article
+      image: img21, // Use a unique image for this article
     },
     {
       title: "The Wylde Review: THE NORTHMAN",
       date: "Apr 25, 2022",
-      image: img3, // Use another image
+      image: img22, // Use another image
     },
     {
       title: "The Wylde Review: DUNE",
       date: "Nov 1, 2021",
-      image: img1, // Use a different image
+      image: img23, // Use a different image
     },
   ];
 
@@ -98,19 +121,19 @@ const HeroSection = () => {
       title: "Southern France",
       description:
         "Southern France is best known for its rolling granite mountains, bountiful farms, underground caves, plenty of heritage, and let's not forget chestnuts and vineyards...",
-      image: img1,
+      image: img29,
     },
     {
       title: "Mielcke and Hurtigkarl, Copenhagen",
       description:
         "Nestled in the beautiful Royal Danish Horticultural Society Garden – Copenhagen's very own Garden of Eden – lies a listed Nineteenth Century building, and inside, the gourmet restaurant Mielcke and Hurtigkarl.",
-      image: img2,
+      image: img30,
     },
     {
       title: "Absalon Hotel, Copenhagen",
       description:
         "Located just a five-minute walk from Central Station and twenty minutes from the airport, the Absalon Hotel offers the perfect base from which to explore Copenhagen.",
-      image: img3,
+      image: img31,
     },
   ];
 
@@ -118,25 +141,25 @@ const HeroSection = () => {
     {
       title: "Wylde Meets: David Newton",
       date: "Jul 17, 2021",
-      image: img1,
+      image: img25,
     },
     {
       title: "The Wylde Interview: Tom Daley",
       subtitle: "Can Tom take Tokyo?",
       date: "May 15, 2020",
-      image: img2,
+      image: img26,
     },
     {
       title: "The Wylde Interview: Ben Miller",
       subtitle: "The Miller's Tale...",
       date: "May 15, 2020",
-      image: img3,
+      image: img27,
     },
     {
       title: "The Wylde Interview: Tate McRae",
       subtitle: "The Canadian all-pop whirlwind pauses for Wylde...",
       date: "May 15, 2020",
-      image: img2,
+      image: img28,
     },
   ];
 
@@ -257,7 +280,7 @@ const HeroSection = () => {
               >
                 <div className="aspect-w-16 aspect-h-9 sm:aspect-w-16 sm:aspect-h-12">
                   <img
-                    src={img3}
+                    src={img11}
                     alt="Rose gold beauty editorial"
                     className="object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
                   />
@@ -272,7 +295,7 @@ const HeroSection = () => {
 
             {/* Right Column - Image Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
-              {[img1, img2, img3, img1].map((img, index) => (
+              {[img8, img9, img3, img10].map((img, index) => (
                 <motion.div
                   key={index}
                   className="group relative"
@@ -323,7 +346,7 @@ const HeroSection = () => {
               className="relative w-full h-full"
             >
               <img
-                src={img1}
+                src={img12}
                 alt="Entertainment Highlight"
                 className="object-cover rounded-lg shadow-lg w-full h-full"
               />
@@ -340,7 +363,7 @@ const HeroSection = () => {
               className="relative w-full h-full"
             >
               <img
-                src={img2}
+                src={img13}
                 alt="Entertainment Event"
                 className="object-cover rounded-lg shadow-lg w-full h-full"
               />
@@ -375,7 +398,7 @@ const HeroSection = () => {
               className="relative w-full h-full"
             >
               <img
-                src={img6}
+                src={img14}
                 alt="Entertainment Highlight"
                 className="object-cover rounded-lg shadow-lg w-full h-full"
               />
@@ -426,7 +449,7 @@ const HeroSection = () => {
               className="relative aspect-w-4 aspect-h-5"
             >
               <img
-                src={img1} // Specific image for first entertainment item
+                src={img16} // Specific image for first entertainment item
                 alt="Entertainment Highlight"
                 className="object-cover rounded-lg shadow-lg"
               />
@@ -442,7 +465,7 @@ const HeroSection = () => {
               className="relative aspect-w-4 aspect-h-5"
             >
               <img
-                src={img2} // Specific image for second entertainment item
+                src={img15} // Specific image for second entertainment item
                 alt="Entertainment Event"
                 className="object-cover rounded-lg shadow-lg"
               />
@@ -651,9 +674,9 @@ const HeroSection = () => {
 
         {/* Optional Overlay Content */}
         <div className="absolute inset-0 flex items-center justify-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold text-center">
+          {/* <h1 className="text-4xl md:text-6xl font-bold text-center">
             Your Title Here
-          </h1>
+          </h1> */}
         </div>
       </section>
 
