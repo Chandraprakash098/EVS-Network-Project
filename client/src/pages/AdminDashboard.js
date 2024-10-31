@@ -519,7 +519,7 @@ const AdminDashboard = () => {
           />
 
           <SectionCard
-            title="Tradional Art Bollywood"
+            title="Tradional Art National"
             items={traditionalArtBollywood}
             addLink="/admin/traditional-art-bollywood/new"
             onDelete={handleDeleteTraditionalArtBollywood}
@@ -532,7 +532,7 @@ const AdminDashboard = () => {
           />
 
           <SectionCard
-            title="Tradional Art Hollywood"
+            title="Tradional Art International"
             items={traditionalArtHollywood}
             addLink="/admin/traditional-art-hollywood/new"
             onDelete={handleDeleteTraditionalArtHollywood}

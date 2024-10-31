@@ -13,15 +13,15 @@ import {
 } from "lucide-react";
 import img1 from "../images/celebrity1.webp";
 import img2 from "../images/pexels-abhinna-28939990.jpg";
-import img3 from "../images/softbrilliance5.jpg";
+import img3 from "../images/softbrilliance5.webp";
 import img4 from "../images/celebrityimage.webp";
 import img5 from "../images/celebrity2.webp";
 import img6 from "../images/pexels-eduardo-hernandez-soto-1315528681-28925178.jpg";
 import img7 from "../images/pexels-rdne-8112576.jpg";
-import img8 from '../images/softbrilliance2.jpg'
-import img9 from '../images/softbrilliance3.jpg'
-import img10 from '../images/softbrilliance4.jpg'
-import img11 from '../images/softbrilliance.jpg'
+import img8 from '../images/softbrilliance2.webp'
+import img9 from '../images/softbrilliance3.webp'
+import img10 from '../images/softbrilliance2.webp'
+import img11 from '../images/softbrilliance.webp'
 import img12 from '../images/hotentertainment1.jpg'
 import img13 from '../images/hotentertainment2.jpg'
 import img14 from '../images/hotentertainmentboly1.jpg'
