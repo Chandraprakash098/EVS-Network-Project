@@ -161,7 +161,7 @@ const Navbar = () => {
               alt="Evs-Network Logo"
               className="w-20 h-16 object-contain transition-transform duration-300 group-hover:scale-110 "
             />
-            <span className="text-lg font-bold tracking-wide text-gray-900">
+            <span className="text-lg font-bold  tracking-wide text-gray-900">
               Evs-Network
             </span>
           </Link>

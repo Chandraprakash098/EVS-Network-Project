@@ -10,15 +10,15 @@ import {
   Calendar,
   Play,
 } from "lucide-react";
-import img1 from "../images/celebrity1.webp";
+import img1 from "../images/celebrity1.jpg";
 import img2 from "../images/pexels-abhinna-28939990.jpg";
 import img3 from "../images/softbrilliance5.webp";
-import img4 from "../images/celebrityimage.webp";
+import img4 from "../images/headerimag3.jpg";
 import img5 from "../images/celebrity2.webp";
 import img6 from "../images/pexels-eduardo-hernandez-soto-1315528681-28925178.jpg";
 import img7 from "../images/pexels-cgardenhire12-2466341.jpg";
 import img8 from "../images/softbrilliance2.webp";
-import img9 from "../images/softbrilliance3.webp";
+import img9 from "../images/softbrilliance3.jpg";
 import img10 from "../images/softbrilliance2.webp";
 import img11 from "../images/softbrilliance.webp";
 import img12 from "../images/hotentertainment1.jpg";
@@ -40,6 +40,8 @@ import img28 from "../images/musicholy4.jpg";
 import img29 from "../images/art1.webp";
 import img30 from "../images/art2.webp";
 import img31 from "../images/art3.webp";
+import img32 from '../images/headerimage.jpg'
+import img33 from '../images/headerimage2.jpg'
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -48,21 +50,21 @@ const HeroSection = () => {
   const slides = [
     {
       title: "EVS NETWORK IS HERE!",
-      subtitle: "Buy your advance copy now...",
+      subtitle: "Where Creativity Finds Its Home",
       type: "cover",
-      image: img1, // Use a specific image for this slide
+      image: img4, // Use a specific image for this slide
     },
     {
       title: "DRAWN TO A SOFT BRILLIANCE",
-      subtitle: "The blushing metallic promises a dozen...",
+      subtitle: "Your Journey Through Contemporary Creation",
       type: "beauty",
-      image: img4, // Use a different image for this slide
+      image: img33, // Use a different image for this slide
     },
     {
-      title: "BEST COMPANY",
-      subtitle: "Wylde meets Rosalie Craig, Queen of the West End",
+      title: "ART WITHOUT BOUNDARIES",
+      subtitle: "Discover Art That Speaks to Your Soul",
       type: "interview",
-      image: img5, // Use another different image for this slide
+      image: img32, // Use another different image for this slide
     },
   ];
 
@@ -193,7 +195,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-white ">
       {/* Header Carousel */}
       <div className="relative h-screen w-full">
         <div className="absolute inset-0 w-full h-full">
@@ -206,20 +208,26 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
             >
               {/* Full-width and full-height image */}
-              <div className="relative w-full h-screen">
+              <div className="relative w-full h-full">
+              <div className="absolute inset-0">
                 <img
                   src={slide.image} // Use slide-specific image
                   alt={slide.title}
-                  className="w-full h-full object-cover"
-                  style={{ minHeight: "300px" }}
+                  className="w-full h-full object-cover object-center"
+                  // style={{ minHeight: "300px" }}
+                  style={{ 
+                    objectPosition: '50% 50%',
+                    minHeight: '100vh'
+                  }}
                 />
+                </div>
 
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col justify-end items-center text-white text-center p-4 sm:p-8">
-                  <h1 className="text-4xl sm:text-6xl font-mono tracking-wider mb-4 text-black">
+                  <h1 className="text-4xl sm:text-6xl font-serif  tracking-wider mb-4 text-white">
                     {slide.title}
                   </h1>
-                  <p className="text-lg sm:text-xl italic">{slide.subtitle}</p>
+                  <p className="text-lg sm:text-xl text-black italic">{slide.subtitle}</p>
                 </div>
               </div>
             </motion.div>
@@ -227,7 +235,7 @@ const HeroSection = () => {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between p-4">
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between p-4">
           <button
             onClick={() =>
               setCurrentSlide(
@@ -294,7 +302,7 @@ const HeroSection = () => {
 
             {/* Right Column - Image Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-8">
-              {[img8, img9, img3, img10].map((img, index) => (
+              {[img1, img9, img3, img10].map((img, index) => (
                 <motion.div
                   key={index}
                   className="group relative"
@@ -327,7 +335,7 @@ const HeroSection = () => {
       <section className="bg-slate-100 py-8 px-4 sm:py-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-10 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif  font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               HOT ENTERTAINMENT
             </h2>
 
