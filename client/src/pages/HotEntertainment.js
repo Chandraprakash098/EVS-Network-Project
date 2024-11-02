@@ -170,7 +170,7 @@ const HotEntertainment = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section
       <section className="bg-slate-600 text-white py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
@@ -197,7 +197,7 @@ const HotEntertainment = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer Quick Links - Mobile Only */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 lg:hidden">

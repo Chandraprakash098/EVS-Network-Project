@@ -17,7 +17,7 @@ import img3 from "../images/softbrilliance5.webp";
 import img4 from "../images/celebrityimage.webp";
 import img5 from "../images/celebrity2.webp";
 import img6 from "../images/pexels-eduardo-hernandez-soto-1315528681-28925178.jpg";
-import img7 from "../images/pexels-rdne-8112576.jpg";
+import img7 from "../images/pexels-cgardenhire12-2466341.jpg";
 import img8 from '../images/softbrilliance2.webp'
 import img9 from '../images/softbrilliance3.webp'
 import img10 from '../images/softbrilliance2.webp'
@@ -705,7 +705,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section
       <section className="bg-slate-600 text-white py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
@@ -731,7 +731,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

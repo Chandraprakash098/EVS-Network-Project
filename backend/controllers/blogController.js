@@ -158,14 +158,52 @@ exports.getSingleBlog = async (req, res) => {
 };
 
 // Create blog with Cloudinary upload
+// exports.createBlog = async (req, res) => {
+//     try {
+//         if (!req.file) {
+//             return res.status(400).json({ error: 'Image is required' });
+//         }
+
+//         // Add logging to verify upload
+//         console.log('Cloudinary Upload Response:', {
+//             path: req.file.path,
+//             filename: req.file.filename,
+//             size: req.file.size,
+//             mimetype: req.file.mimetype
+//         });
+
+//         const { title, content, author, category, tags } = req.body;
+        
+//         const blog = new Blog({
+//             title,
+//             content,
+//             author,
+//             category,
+//             tags: tags ? tags.split(',').map(tag => tag.trim()) : [],
+//             image: req.file.path
+//         });
+
+//         await blog.save();
+        
+//         // Log successful save
+//         console.log('Blog saved with image:', blog.image);
+        
+//         res.status(201).json(blog);
+//     } catch (error) {
+//         console.error('Blog creation error:', error);
+//         res.status(500).json({ error: error.message });
+//     }
+// };
+
+
 exports.createBlog = async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'Image is required' });
         }
 
-        // Add logging to verify upload
-        console.log('Cloudinary Upload Response:', {
+        // Log file properties to ensure upload succeeded
+        console.log('Uploaded file details:', {
             path: req.file.path,
             filename: req.file.filename,
             size: req.file.size,
@@ -173,27 +211,28 @@ exports.createBlog = async (req, res) => {
         });
 
         const { title, content, author, category, tags } = req.body;
-        
+
         const blog = new Blog({
             title,
             content,
             author,
             category,
             tags: tags ? tags.split(',').map(tag => tag.trim()) : [],
-            image: req.file.path
+            image: req.file.path  // Cloudinary URL after multer upload
         });
 
         await blog.save();
-        
+
         // Log successful save
         console.log('Blog saved with image:', blog.image);
-        
+
         res.status(201).json(blog);
     } catch (error) {
         console.error('Blog creation error:', error);
         res.status(500).json({ error: error.message });
     }
 };
+
 
 // Update blog with Cloudinary upload
 exports.updateBlog = async (req, res) => {

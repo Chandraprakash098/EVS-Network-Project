@@ -166,11 +166,11 @@ const Footer = () => {
             icon={<FaWhatsapp size={20} />}
           />
           <SocialIcon
-            href="https://www.instagram.com/evosynchtech/"
+            href="https://www.instagram.com/evosynchtech/?igsh=ZHBvNGE5anl1aDZq#"
             icon={<FaInstagram size={20} />}
           />
           <SocialIcon
-            href="https://www.linkedin.com/company/evosynchtech/"
+            href="https://www.linkedin.com/company/evosynchtech/posts/?feedView=all"
             icon={<FaLinkedin size={20} />}
           />
         </div>

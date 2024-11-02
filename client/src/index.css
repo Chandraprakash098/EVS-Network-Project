@@ -16,7 +16,10 @@
 @layer base {
   body {
     @apply bg-slate-300 text-white font-sans;
+    
   }
+
+  
 
   h1, h2, h3 {
     @apply text-hotPink;

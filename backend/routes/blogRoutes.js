@@ -3,7 +3,7 @@ const blogController = require('../controllers/blogController');
 const authMiddleware = require('../middleware/authMiddleware');
 const multer = require('multer');
 const path = require('path');
-const { upload,cloudinary } = require('../config/cloudinary');
+const { upload } = require('../config/cloudinary');
 
 
 // const storage = multer.diskStorage({

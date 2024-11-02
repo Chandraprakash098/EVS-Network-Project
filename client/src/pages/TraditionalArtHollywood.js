@@ -351,7 +351,7 @@ const TraditionalArtHollywood = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="bg-slate-400 py-16">
+      {/* <section className="bg-slate-400 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
@@ -372,7 +372,7 @@ const TraditionalArtHollywood = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
