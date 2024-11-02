@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   ChevronLeft,
   ChevronRight,
-  ArrowRight,
   Heart,
   MessageCircle,
   Share2,
@@ -18,29 +17,29 @@ import img4 from "../images/celebrityimage.webp";
 import img5 from "../images/celebrity2.webp";
 import img6 from "../images/pexels-eduardo-hernandez-soto-1315528681-28925178.jpg";
 import img7 from "../images/pexels-cgardenhire12-2466341.jpg";
-import img8 from '../images/softbrilliance2.webp'
-import img9 from '../images/softbrilliance3.webp'
-import img10 from '../images/softbrilliance2.webp'
-import img11 from '../images/softbrilliance.webp'
-import img12 from '../images/hotentertainment1.jpg'
-import img13 from '../images/hotentertainment2.jpg'
-import img14 from '../images/hotentertainmentboly1.jpg'
-import img15 from '../images/hotentertainmentholy1.jpg'
-import img16 from '../images/hotentertainmentholy2.jpg'
-import img17 from '../images/music1.jpg'
-import img18 from '../images/music2.jpg'
-import img19 from '../images/music3.jpg'
-import img20 from '../images/music4.jpg'
-import img21 from '../images/musicboly1.jpg'
-import img22 from '../images/musicboly2.jpg'
-import img23 from '../images/musicboly3.jpg'
-import img25 from '../images/musicholy1.jpg'
-import img26 from '../images/musicholy2.jpg'
-import img27 from '../images/musicholy3.jpg'
-import img28 from '../images/musicholy4.jpg'
-import img29 from '../images/art1.webp'
-import img30 from '../images/art2.webp'
-import img31 from '../images/art3.webp'
+import img8 from "../images/softbrilliance2.webp";
+import img9 from "../images/softbrilliance3.webp";
+import img10 from "../images/softbrilliance2.webp";
+import img11 from "../images/softbrilliance.webp";
+import img12 from "../images/hotentertainment1.jpg";
+import img13 from "../images/hotentertainment2.jpg";
+import img14 from "../images/hotentertainmentboly1.jpg";
+import img15 from "../images/hotentertainmentholy1.jpg";
+import img16 from "../images/hotentertainmentholy2.jpg";
+import img17 from "../images/music1.jpg";
+import img18 from "../images/music2.jpg";
+import img19 from "../images/music3.jpg";
+import img20 from "../images/music4.jpg";
+import img21 from "../images/musicboly1.jpg";
+import img22 from "../images/musicboly2.jpg";
+import img23 from "../images/musicboly3.jpg";
+import img25 from "../images/musicholy1.jpg";
+import img26 from "../images/musicholy2.jpg";
+import img27 from "../images/musicholy3.jpg";
+import img28 from "../images/musicholy4.jpg";
+import img29 from "../images/art1.webp";
+import img30 from "../images/art2.webp";
+import img31 from "../images/art3.webp";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -328,7 +327,7 @@ const HeroSection = () => {
       <section className="bg-slate-100 py-8 px-4 sm:py-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-10 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               HOT ENTERTAINMENT
             </h2>
 
@@ -341,39 +340,41 @@ const HeroSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative w-full h-full"
-            >
-              <img
-                src={img12}
-                alt="Entertainment Highlight"
-                className="object-cover rounded-lg shadow-lg w-full h-full"
-              />
-              {/* Text at the bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-white text-xl sm:text-2xl font-serif">
-                  AWARD NIGHT HIGHLIGHTS
-                </h3>
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative w-full h-full cursor-pointer"
+              >
+                <img
+                  src={img12}
+                  alt="Entertainment Highlight"
+                  className="object-cover rounded-lg shadow-lg w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-white text-xl sm:text-2xl font-serif">
+                    AWARD NIGHT HIGHLIGHTS
+                  </h3>
+                </div>
+              </motion.div>
+            </Link>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative w-full h-full"
-            >
-              <img
-                src={img13}
-                alt="Entertainment Event"
-                className="object-cover rounded-lg shadow-lg w-full h-full"
-              />
-              {/* Text at the bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-white text-xl sm:text-2xl font-serif">
-                  RED CARPET MOMENTS
-                </h3>
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative w-full h-full cursor-pointer"
+              >
+                <img
+                  src={img13}
+                  alt="Entertainment Event"
+                  className="object-cover rounded-lg shadow-lg w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-white text-xl sm:text-2xl font-serif">
+                    RED CARPET MOMENTS
+                  </h3>
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>
@@ -393,37 +394,41 @@ const HeroSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative w-full h-full"
-            >
-              <img
-                src={img14}
-                alt="Entertainment Highlight"
-                className="object-cover rounded-lg shadow-lg w-full h-full"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-white text-lg sm:text-2xl font-serif">
-                  AWARD NIGHT HIGHLIGHTS
-                </h3>
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment/bollywood">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative w-full h-full cursor-pointer"
+              >
+                <img
+                  src={img14}
+                  alt="Entertainment Highlight"
+                  className="object-cover rounded-lg shadow-lg w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-white text-lg sm:text-2xl font-serif">
+                    AWARD NIGHT HIGHLIGHTS
+                  </h3>
+                </div>
+              </motion.div>
+            </Link>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative w-full h-100full"
-            >
-              <img
-                src={img7}
-                alt="Entertainment Event"
-                className="object-cover rounded-lg shadow-lg w-full h-full"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-white text-lg sm:text-2xl font-serif">
-                  RED CARPET MOMENTS
-                </h3>
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment/bollywood">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative w-full h-full cursor-pointer"
+              >
+                <img
+                  src={img7}
+                  alt="Entertainment Event"
+                  className="object-cover rounded-lg shadow-lg w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                  <h3 className="text-white text-lg sm:text-2xl font-serif">
+                    RED CARPET MOMENTS
+                  </h3>
+                </div>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>
@@ -431,7 +436,7 @@ const HeroSection = () => {
       <section className="bg-slate-100 py-8 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-12">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               HOT HOLLYWOOD ENTERTAINMENT
             </h2>
 
@@ -444,37 +449,33 @@ const HeroSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
-            >
-              <img
-                src={img16} // Specific image for first entertainment item
-                alt="Entertainment Highlight"
-                className="object-cover rounded-lg shadow-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                {/* <h3 className="text-black text-lg sm:text-2xl font-serif">
-                  AWARD NIGHT HIGHLIGHTS
-                </h3> */}
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment/hollywood">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative aspect-w-4 aspect-h-5 cursor-pointer"
+              >
+                <img
+                  src={img16}
+                  alt="Entertainment Highlight"
+                  className="object-cover rounded-lg shadow-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent"></div>
+              </motion.div>
+            </Link>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative aspect-w-4 aspect-h-5"
-            >
-              <img
-                src={img15} // Specific image for second entertainment item
-                alt="Entertainment Event"
-                className="object-cover rounded-lg shadow-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                {/* <h3 className="text-black text-lg sm:text-2xl font-serif">
-                  RED CARPET MOMENTS
-                </h3> */}
-              </div>
-            </motion.div>
+            <Link to="/hot-entertainment/hollywood">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="relative aspect-w-4 aspect-h-5 cursor-pointer"
+              >
+                <img
+                  src={img15}
+                  alt="Entertainment Event"
+                  className="object-cover rounded-lg shadow-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent"></div>
+              </motion.div>
+            </Link>
           </div>
         </div>
       </section>
@@ -483,7 +484,7 @@ const HeroSection = () => {
       <section className="py-12 px-4 sm:py-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
+            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
               Music
             </h2>
             <Link
@@ -495,26 +496,27 @@ const HeroSection = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {beautyArticles.map((article, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.02 }}
-                className={`${article.bgColor} p-4 rounded-lg`}
-              >
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-48 sm:h-64 object-cover mb-3 sm:mb-4 rounded"
-                />
-                <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">
-                  {article.date}
-                </p>
-                <h3 className="text-black sm:text-lg font-serif">
-                  {article.title}
-                </h3>
-                <p className="text-black sm:text-sm italic">
-                  {article.subtitle}
-                </p>
-              </motion.div>
+              <Link to="/music" key={index} className="block">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className={`${article.bgColor} p-4 rounded-lg cursor-pointer`}
+                >
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-48 sm:h-64 object-cover mb-3 sm:mb-4 rounded"
+                  />
+                  <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">
+                    {article.date}
+                  </p>
+                  <h3 className="text-black sm:text-lg font-serif">
+                    {article.title}
+                  </h3>
+                  <p className="text-black sm:text-sm italic">
+                    {article.subtitle}
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -522,28 +524,28 @@ const HeroSection = () => {
 
       {/* Bollywood Music */}
       <section className="py-12 sm:py-16 px-4 bg-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
-              Bollywood Music
-            </h2>
-            <Link
-              to="/music/bollywood"
-              className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
-            >
-              See All in Bollywood Music
-            </Link>
-          </div>
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
+            Bollywood Music
+          </h2>
+          <Link
+            to="/music/bollywood"
+            className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
+          >
+            See All in Bollywood Music
+          </Link>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {cultureArticles.map((article, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+          {cultureArticles.map((article, index) => (
+            <Link to="/music/bollywood" key={index}>
               <motion.div
-                key={index}
                 whileHover={{ scale: 1.05 }}
-                className="relative aspect-w-4 aspect-h-5"
+                className="relative aspect-w-4 aspect-h-5 cursor-pointer"
               >
                 <img
-                  src={article.image} // Use article-specific image
+                  src={article.image}
                   alt={article.title}
                   className="object-cover rounded-lg"
                 />
@@ -556,32 +558,34 @@ const HeroSection = () => {
                   </p>
                 </div>
               </motion.div>
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Hollywood Music */}
       <section className="py-12 sm:py-16 px-4 bg-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
-              HOLLYWOOD Music
-            </h2>
-            <Link
-              to="/music/hollywood"
-              className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
+            HOLLYWOOD Music
+          </h2>
+          <Link
+            to="/music/hollywood"
+            className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
+          >
+            See All in Hollywood Music
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+          {interviews.map((interview, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.02 }}
+              className="space-y-4"
             >
-              See All in Hollywood Music
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
-            {interviews.map((interview, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.02 }}
-                className="space-y-4"
-              >
+              <Link to="/music/hollywood" className="block">
                 <div className="aspect-w-3 aspect-h-4 overflow-hidden">
                   <img
                     src={interview.image}
@@ -589,46 +593,48 @@ const HeroSection = () => {
                     className="object-cover w-full h-full rounded-lg"
                   />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-black sm:text-xl font-serif">
-                    {interview.title}
-                  </h3>
-                  {interview.subtitle && (
-                    <p className="text-sm sm:text-base text-gray-600 italic">
-                      {interview.subtitle}
-                    </p>
-                  )}
-                  <p className="text-xs sm:text-sm text-gray-500 font-mono">
-                    {interview.date}
+              </Link>
+              <div className="space-y-2">
+                <h3 className="text-black sm:text-xl font-serif">
+                  {interview.title}
+                </h3>
+                {interview.subtitle && (
+                  <p className="text-sm sm:text-base text-gray-600 italic">
+                    {interview.subtitle}
                   </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                )}
+                <p className="text-xs sm:text-sm text-gray-500 font-mono">
+                  {interview.date}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Traditional Art Section */}
       <section className="bg-slate-100 py-12 sm:py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-            <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
-              Traditional Art
-            </h2>
-            <Link
-              to="/traditional-art"
-              className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
+          <h2 className="text-2xl sm:text-5xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
+            Traditional Art
+          </h2>
+          <Link
+            to="/traditional-art"
+            className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
+          >
+            See All in Traditional Art
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+          {travelArticles.map((article, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.01 }}
+              className="space-y-4"
             >
-              See All in Traditional Art
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {travelArticles.map((article, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.01 }}
-                className="space-y-4"
-              >
+              <Link to="/traditional-art" className="block">
                 <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                   <img
                     src={article.image}
@@ -636,19 +642,20 @@ const HeroSection = () => {
                     className="object-cover w-full h-full rounded-lg shadow-lg"
                   />
                 </div>
-                <div className="space-y-3">
-                  <h3 className="text-black sm:text-xl font-serif">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed font-mono">
-                    {article.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              </Link>
+              <div className="space-y-3">
+                <h3 className="text-black sm:text-xl font-serif">
+                  {article.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed font-mono">
+                  {article.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className="relative w-full h-screen overflow-hidden">
         <div className="absolute inset-0">

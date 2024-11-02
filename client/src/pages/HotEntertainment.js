@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  Sparkles,
+  
   TrendingUp,
-  Play,
   Star,
   Film,
   Tv,
   Menu,
-  X,
+  
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../config";
