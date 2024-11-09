@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Activity, ChevronDown, X, Menu } from "lucide-react";
-import logo from '../images/evsfinallogo.png'
+import logo from "../images/evslogo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -149,8 +149,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 ">
-          {/* Logo */}
+        {/* <div className="flex items-center justify-between h-16 ">
+          
           <Link
             to="/"
             className="flex items-center space-x-1 group"
@@ -159,11 +159,100 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Evs-Network Logo"
-              className="w-20 h-16 object-contain transition-transform duration-300 group-hover:scale-110 "
+              className="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-105 hover:shadow-lg rounded-sm"
             />
             <span className="text-lg font-bold  tracking-wide text-gray-900">
               Evs-Network
             </span>
+          </Link> */}
+
+<div className="flex items-center justify-between h-16">
+          <Link
+            to="/"
+            className="flex items-center space-x-1 group transform transition-all duration-300 hover:scale-105"
+            onClick={closeMenus}
+          >
+            <div className="w-44 h-14 relative">
+              <svg
+                viewBox="0 0 260 60"
+                className="w-full h-full"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient
+                    id="evsPink"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#FF9999" />
+                    <stop offset="100%" stopColor="#FF6B6B" />
+                  </linearGradient>
+
+                  <linearGradient
+                    id="networkBlue"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stopColor="#4A90E2" />
+                    <stop offset="100%" stopColor="#357ABD" />
+                  </linearGradient>
+                </defs>
+
+                {/* EVS Text */}
+                <text
+                  x="10"
+                  y="35"
+                  className="font-bold"
+                  // fill="url(#evsPink)"
+                  fill="#000000" 
+                  fontSize="36"
+                  fontFamily="Arial, sans-serif"
+                  letterSpacing="1"
+                  stroke="#000"
+  strokeWidth="0.5"
+  filter="url(#textShadow)"
+                >
+                  EVS
+                </text>
+
+                {/* NETWORK Text */}
+                <text
+                  x="95"
+                  y="35"
+                  // fill="url(#networkBlue)"
+                  fill="#000000"
+                  fontSize="22"
+                  fontFamily="Arial, sans-serif"
+                  className="font-medium"
+                  letterSpacing="0.5"
+                >
+                  NETWORK
+                </text>
+
+                {/* Curved Underline */}
+                <path
+                  d="M10,40 Q130,45 250,40"
+                  fill="none"
+                  stroke="url(#evsPink)"
+                  strokeWidth="1"
+                  opacity="0.6"
+                  className="animate-pulse"
+                />
+
+                {/* Subtle dot decoration */}
+                <circle
+                  cx="85"
+                  cy="35"
+                  r="2"
+                  fill="url(#evsPink)"
+                  opacity="0.8"
+                />
+              </svg>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -15,7 +15,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-300 text-white font-sans;
+    @apply bg-slate-100 text-white font-sans;
     
   }
 

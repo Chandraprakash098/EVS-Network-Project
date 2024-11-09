@@ -125,3 +125,10 @@ const HollywoodArticleView = () => {
 };
 
 export default HollywoodArticleView;
+
+
+
+
+
+
+

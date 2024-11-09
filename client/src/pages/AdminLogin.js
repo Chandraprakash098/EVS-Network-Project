@@ -16,6 +16,7 @@ const AdminLogin = () => {
         email,
         password
       });
+      console.log('Received login request for email:', email);
       localStorage.setItem('adminToken', response.data.token);
       navigate('/admin/dashboard');
     } catch (error) {
