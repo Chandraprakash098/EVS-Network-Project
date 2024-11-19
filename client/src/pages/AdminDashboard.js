@@ -417,15 +417,15 @@ const AdminDashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
-          <SectionCard
+          {/* <SectionCard
             title="Blog Posts"
             items={blogs}
             addLink="/admin/blog/new"
             onDelete={handleDeleteBlog}
             editBaseLink="/admin/blog/edit"
-          />
+          /> */}
 
-          <SectionCard
+          {/* <SectionCard
             title="Hot-Entertainment"
             items={entertainment}
             addLink="/admin/hot-entertainment/new"
@@ -437,7 +437,7 @@ const AdminDashboard = () => {
               </p>
             )}
             category="hot-entertainment"
-          />
+          /> */}
 
           <SectionCard
             title="Hot-Bollywood-Entertainment"
@@ -466,7 +466,7 @@ const AdminDashboard = () => {
             )}
           />
 
-          <SectionCard
+          {/* <SectionCard
             title="Music"
             items={music}
             addLink="/admin/music/new"
@@ -477,7 +477,7 @@ const AdminDashboard = () => {
                 {item.category}
               </p>
             )}
-          />
+          /> */}
 
           <SectionCard
             title="Bollywood Music"
@@ -505,7 +505,7 @@ const AdminDashboard = () => {
             )}
           />
 
-          <SectionCard
+          {/* <SectionCard
             title="Tradional Art"
             items={traditionalArt}
             addLink="/admin/traditional-art/new"
@@ -516,7 +516,7 @@ const AdminDashboard = () => {
                 {item.category}
               </p>
             )}
-          />
+          /> */}
 
           <SectionCard
             title="Tradional Art National"

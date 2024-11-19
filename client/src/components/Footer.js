@@ -31,7 +31,7 @@ const Footer = () => {
             icon={<FaWhatsapp size={20} />}
           />
           <SocialIcon
-            href="https://www.instagram.com/evosynchtech/?igsh=ZHBvNGE5anl1aDZq#"
+            href="https://www.instagram.com/evs.beats?igsh=NjA5NHFpMTV4ejBm"
             icon={<FaInstagram size={20} />}
           />
           <SocialIcon
@@ -49,22 +49,22 @@ const Footer = () => {
             </h3>
             <nav className="space-y-2 sm:space-y-3 text-white">
               <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/hot-entertainment">
+              {/* <FooterLink href="/hot-entertainment">
                 Hot Entertainment
-              </FooterLink>
+              </FooterLink> */}
               <FooterLink href="/hot-entertainment/bollywood">
                 Hot Bollywood Entertainment 
               </FooterLink>
               <FooterLink href="/hot-entertainment/hollywood">
                 Hot Hollywood Entertainment 
               </FooterLink>
-              <FooterLink href="/music">Music</FooterLink>
+              {/* <FooterLink href="/music">Music</FooterLink> */}
               <FooterLink href="/music/bollywood">Bollywood Music</FooterLink>
               <FooterLink href="/music/hollywood">Hollywood Music</FooterLink>
-              <FooterLink href="/traditional-art">Traditional Art</FooterLink>
+              {/* <FooterLink href="/traditional-art">Traditional Art</FooterLink> */}
               <FooterLink href="/traditional-art/bollywood">National Traditional Art</FooterLink>
               <FooterLink href="/traditional-art/hollywood">International Traditional Art</FooterLink>
-              <FooterLink href="/blog">Blogs</FooterLink>
+              
               <FooterLink href="/career">Carrers</FooterLink>
               <FooterLink href="/about-us">About Us</FooterLink>
             </nav>

@@ -42,6 +42,19 @@ import img30 from "../images/art2.webp";
 import img31 from "../images/art3.webp";
 import img32 from "../images/avenger.jpg";
 import img33 from "../images/headerimage2.jpeg";
+import img34 from "../images/insta1.png";
+import img35 from "../images/insta2.jpg";
+import img36 from "../images/insta3.jpg";
+import img37 from "../images/insta4.jpg";
+import img38 from "../images/tradi1.jpg";
+import img39 from "../images/tradi2.jpg";
+import img40 from "../images/tradi3.webp";
+import img41 from "../images/bmusic1.jpg";
+import img42 from "../images/bolymusic.jpg";
+import img43 from "../images/hmusic.jpg";
+import img44 from "../images/h2music.jpg";
+import img45 from "../images/tart1.jpg";
+import img46 from "../images/tart2.jpg";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -112,14 +125,14 @@ const HeroSection = () => {
     {
       title: "The Wylde Review: THE NORTHMAN",
       date: "Apr 25, 2022",
-      image: img22, // Use another image
-      link: "/music/bollywood/article/672f030ea871d8680b5e7349",
+      image: img41, // Use another image
+      link: "/music/bollywood/article/673c1376be1124b80256585f",
     },
     {
       title: "The Wylde Review: DUNE",
       date: "Nov 1, 2021",
-      image: img23, // Use a different image
-      link: "/music/bollywood/article/672f030ea871d8680b5e7349",
+      image: img42, // Use a different image
+      link: "/music/bollywood/article/673c13ffbe1124b802565878",
     },
   ];
 
@@ -128,45 +141,42 @@ const HeroSection = () => {
       title: "Southern France",
       description:
         "Southern France is best known for its rolling granite mountains, bountiful farms, underground caves, plenty of heritage, and let's not forget chestnuts and vineyards...",
-      image: img29,
+      image: img38,
+      link: "/traditional-art/bollywood/article/67309eb342065e288500e0a1",
     },
     {
       title: "Mielcke and Hurtigkarl, Copenhagen",
       description:
         "Nestled in the beautiful Royal Danish Horticultural Society Garden – Copenhagen's very own Garden of Eden – lies a listed Nineteenth Century building, and inside, the gourmet restaurant Mielcke and Hurtigkarl.",
-      image: img30,
+      image: img39,
+      link: "/traditional-art/bollywood/article/67309f1442065e288500e0d6",
     },
     {
       title: "Absalon Hotel, Copenhagen",
       description:
         "Located just a five-minute walk from Central Station and twenty minutes from the airport, the Absalon Hotel offers the perfect base from which to explore Copenhagen.",
-      image: img31,
+      image: img40,
+      link: "/traditional-art/bollywood/article/67309f4f42065e288500e0ef",
     },
   ];
 
   const artInternational = [
     {
-      title: "Southern France",
+      title: "The Timeless Allure of Traditional Hollywood Poster Art",
       description:
-        "Southern France is best known for its rolling granite mountains, bountiful farms, underground caves, plenty of heritage, and let's not forget chestnuts and vineyards...",
-      image: img29,
+        "The Timeless Allure of Traditional Hollywood Poster Art",
+      image: img46,
+      link: "/traditional-art/hollywood/article/673c12fbbe1124b802565846",
     },
     {
-      title: "Mielcke and Hurtigkarl, Copenhagen",
+      title: "Hollywood Matte Painting: The Hidden Masterpieces of Traditional Art",
       description:
-        "Nestled in the beautiful Royal Danish Horticultural Society Garden – Copenhagen's very own Garden of Eden – lies a listed Nineteenth Century building, and inside, the gourmet restaurant Mielcke and Hurtigkarl.",
-      image: img30,
+        "Hollywood Matte Painting: The Hidden Masterpieces of Traditional Art",
+      image: img45,
+      link: "/traditional-art/hollywood/article/673c12bbbe1124b80256582d",
     },
-    {
-      title: "Absalon Hotel, Copenhagen",
-      description:
-        "Located just a five-minute walk from Central Station and twenty minutes from the airport, the Absalon Hotel offers the perfect base from which to explore Copenhagen.",
-      image: img31,
-    },
+    
   ];
-
-  
-
 
   const interviews = [
     {
@@ -176,25 +186,18 @@ const HeroSection = () => {
       link: "music/hollywood/article/672f0386a871d8680b5e737e",
     },
     {
-      title: "The Wylde Interview: Tom Daley",
+      title: "The Evolution of Hollywood Music: From Silent Films to Blockbusters",
       subtitle: "Can Tom take Tokyo?",
       date: "May 15, 2020",
-      image: img26,
-      link: "music/hollywood/article/672f0386a871d8680b5e737e",
+      image: img43,
+      link: "/music/hollywood/article/673c11b6be1124b8025657df",
     },
     {
-      title: "The Wylde Interview: Ben Miller",
+      title: "Top 10 Iconic Hollywood Movie Soundtracks That Shaped Cinema",
       subtitle: "The Miller's Tale...",
       date: "May 15, 2020",
-      image: img27,
-      link: "music/hollywood/article/672f0386a871d8680b5e737e",
-    },
-    {
-      title: "The Wylde Interview: Tate McRae",
-      subtitle: "The Canadian all-pop whirlwind pauses for Wylde...",
-      date: "May 15, 2020",
-      image: img28,
-      link: "music/hollywood/article/672f0386a871d8680b5e737e",
+      image: img44,
+      link: "/music/hollywood/article/673c1242be1124b8025657f8",
     },
   ];
 
@@ -376,7 +379,7 @@ const HeroSection = () => {
       </section>
 
       {/* Hot Entertainment Section */}
-      <section className="bg-slate-100 py-8 px-4 sm:py-16">
+      {/* <section className="bg-slate-100 py-8 px-4 sm:py-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-10 text-center sm:text-left">
             <h2 className="text-2xl sm:text-5xl font-serif  font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
@@ -403,9 +406,7 @@ const HeroSection = () => {
                   className="object-cover rounded-lg shadow-lg w-full h-full"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                  {/* <h3 className="text-white italic text-xl sm:text-2xl font-serif">
-                    AWARD NIGHT HIGHLIGHTS
-                  </h3> */}
+                  
                 </div>
               </motion.div>
             </Link>
@@ -421,15 +422,13 @@ const HeroSection = () => {
                   className="object-cover rounded-lg shadow-lg w-full h-full"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/80 to-transparent">
-                  {/* <h3 className="text-white text-xl sm:text-2xl font-serif">
-                    RED CARPET MOMENTS
-                  </h3> */}
+                  
                 </div>
               </motion.div>
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-white py-8 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -634,7 +633,7 @@ const HeroSection = () => {
               See All in Hollywood Music
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {interviews.map((interview, index) => (
               <motion.div
                 key={index}
@@ -655,13 +654,13 @@ const HeroSection = () => {
                     {interview.title}
                   </h3>
                   {/* {interview.subtitle && (
-                    <p className="text-sm sm:text-base text-gray-600 italic">
-                      {interview.subtitle}
-                    </p>
-                  )} */}
+              <p className="text-sm sm:text-base text-gray-600 italic">
+                {interview.subtitle}
+              </p>
+            )} */}
                   {/* <p className="text-xs sm:text-sm text-gray-500 font-mono">
-                    {interview.date}
-                  </p> */}
+              {interview.date}
+            </p> */}
                 </div>
               </motion.div>
             ))}
@@ -669,7 +668,6 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* Traditional Art Section */}
       <section className="bg-slate-100 py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
@@ -678,7 +676,7 @@ const HeroSection = () => {
             </h2>
 
             <Link
-              to="/traditional-art"
+              to="/traditional-art/bollywood"
               className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
             >
               See All in Traditional Art
@@ -691,7 +689,7 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.01 }}
                 className="space-y-4"
               >
-                <Link to="/traditional-art" className="block">
+                <Link to={article.link} className="block">
                   <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                     <img
                       src={article.image}
@@ -700,14 +698,6 @@ const HeroSection = () => {
                     />
                   </div>
                 </Link>
-                <div className="space-y-3">
-                  <h3 className="text-black sm:text-xl font-serif">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed font-mono">
-                    {article.description}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -728,14 +718,14 @@ const HeroSection = () => {
               See All in Traditional Art
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {artInternational.map((article, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.01 }}
                 className="space-y-4"
               >
-                <Link to="/traditional-art" className="block">
+                <Link to={article.link} className="block">
                   <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                     <img
                       src={article.image}
@@ -745,12 +735,12 @@ const HeroSection = () => {
                   </div>
                 </Link>
                 <div className="space-y-3">
-                  <h3 className="text-black sm:text-xl font-serif">
+                   <h3 className="text-black sm:text-xl font-serif">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed font-mono">
+                  {/* <p className="text-sm text-gray-600 leading-relaxed font-mono">
                     {article.description}
-                  </p>
+                  </p>  */}
                 </div>
               </motion.div>
             ))}
@@ -760,7 +750,7 @@ const HeroSection = () => {
 
       <section className="relative w-full h-screen overflow-hidden">
         <div className="absolute inset-0">
-          {[img3, img7, img6].map((image, index) => (
+          {[img2, img3, img6].map((image, index) => (
             <motion.div
               key={index}
               initial={{ y: index * -200 }}
@@ -789,7 +779,7 @@ const HeroSection = () => {
       </section>
 
       {/* Instagram Section */}
-      <section className="bg-slate-100 py-16 px-4 text-white">
+      {/* <section className="bg-slate-100 py-16 px-4 text-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r  from-black via-gray-400 to-black tracking-wider   uppercase mb-4 sm:mb-0">
             Follow us on Instagram
@@ -812,38 +802,41 @@ const HeroSection = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Newsletter Section
-      <section className="bg-slate-600 text-white py-12 md:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-3xl md:text-4xl font-bold font-serif mb-4 md:mb-6">
-              Subscribe to EVs-Network
-            </h3>
-            <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base">
-              Get exclusive access to the hottest stories, celebrity interviews, and behind-the-scenes content delivered right to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 sm:px-6 py-3 bg-white/10 rounded-full text-white placeholder-gray-400 border border-white/20 focus:border-white outline-none w-full sm:w-auto text-sm md:text-base"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 sm:px-8 py-3 bg-green-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all text-sm md:text-base"
+      {/* Instagram Section */}
+      <section className="bg-slate-100 py-16 px-4 text-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-black via-gray-400 to-black tracking-wider uppercase mb-4 sm:mb-0">
+            Follow us on Instagram
+          </h2>
+
+          <br />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {[img34, img35, img36, img37].map((image, index) => (
+              <a
+                key={index}
+                href={`https://www.instagram.com/evs.beats?igsh=NjA5NHFpMTV4ejBm`} // Set the Instagram link here
+                target="_blank" // Open link in a new tab
+                rel="noopener noreferrer" // Security measure for external links
               >
-                Subscribe Now
-              </motion.button>
-            </div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative aspect-w-1 aspect-h-1"
+                >
+                  <img
+                    src={image} // Use different images from the array
+                    alt={`Instagram post ${index + 1}`}
+                    className="object-cover rounded-lg w-full h-full" // Ensure images fill their container
+                  />
+                </motion.div>
+              </a>
+            ))}
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };
 
 export default HeroSection;
-
