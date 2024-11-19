@@ -712,7 +712,7 @@ const HeroSection = () => {
             </h2>
 
             <Link
-              to="/traditional-art"
+              to="/traditional-art/hollywood"
               className="text-xs sm:text-sm italic text-gray-700 hover:text-neon-green transition-colors"
             >
               See All in Traditional Art
